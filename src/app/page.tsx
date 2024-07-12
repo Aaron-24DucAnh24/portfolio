@@ -1,3 +1,4 @@
+import { HomePage } from '@/components/home';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,7 +8,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="h-fit-screen">
+    <main className="h-fit-screen mt-16">
+      <HomePage />
     </main>
   );
 }

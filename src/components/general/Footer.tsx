@@ -3,7 +3,8 @@ import {
   FaFacebook,
   FaPhone,
   FaGithub,
-  FaHeart
+  FaHeart,
+  FaLinkedin
 } from 'react-icons/fa';
 import { IoMdMail } from 'react-icons/io';
 import { Logo } from './Logo';
@@ -11,7 +12,7 @@ import { PATH_NAME, TAB_NAME } from '@/utils/constants';
 
 export function Footer() {
   return (
-    <footer className="rounded-t-3xl shadow-2xl p-4 mt-10">
+    <footer className="rounded-t-3xl shadow-2xl p-4">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="md:flex md:items-center md:justify-between ">
           <ul className="flex flex-col space-y-2 mb-4 items-center justify-center font-medium  md:flex-row md:space-y-0 md:mb-0">
@@ -69,6 +70,14 @@ export function Footer() {
                 className=" hover:text-primary me-10"
               >
                 <FaPhone size={24} />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://www.linkedin.com/in/duc-anh-bui-2143b7275/"
+                className=" hover:text-primary me-10"
+              >
+                <FaLinkedin size={24} />
               </Link>
             </li>
           </ul>
