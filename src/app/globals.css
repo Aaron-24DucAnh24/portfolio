@@ -34,3 +34,18 @@
 ::-webkit-scrollbar-thumb {
   background: #e60022;
 }
+
+.dotted-li::before {
+  content: '.';
+  color: #000;
+  position: absolute;
+  left: 0;
+  top: -4px;
+  font-weight: 700;
+  font-size: large;
+}
+
+.dotted-li {
+  padding-left: 12px;
+  position: relative;
+}

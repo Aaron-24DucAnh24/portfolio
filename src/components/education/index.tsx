@@ -4,8 +4,8 @@ import { HiOutlineBookOpen } from 'react-icons/hi';
 
 export const EducationPage = () => {
   return (
-    <div className='w-full p-4 flex flex-col'>
-      <h1 className='py-8 sm:py-12 text-xl sm:text-3xl font-medium flex items-center sm:tracking-tighter'>
+    <div className='max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col'>
+      <h1 className='pb-2 sm:pb-12 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
         Education and Certificates
         <HiOutlineBookOpen color='#e60022' size={40} className='pl-2' />
       </h1>

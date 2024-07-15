@@ -7,12 +7,14 @@ export const STATIC_URLS = {
   CLOUD: '/cloud.png',
   IDP: '/idp.png',
   HCMUT: '/hcmut.jpg',
+  PETOPIA: '/petopia.png',
+  NETPOWER: '/netpower.png'
 };
 
 export const PATH_NAME = {
   HOME: '/',
   EDUCATION: '/education',
-  PROJECTS: '/projects',
+  PROJECTS: '/experiences',
   SKILLS: '/skills',
   CONTACT: '/contact',
 };
@@ -20,7 +22,7 @@ export const PATH_NAME = {
 export const TAB_NAME = {
   HOME: 'Home',
   EDUCATION: 'Education',
-  PROJECTS: 'Projects',
+  PROJECTS: 'Experiences',
   SKILLS: 'Skills',
   CONTACT: 'Contact',
 };

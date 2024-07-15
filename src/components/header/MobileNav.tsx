@@ -25,6 +25,8 @@ export const MobileNav = () => {
       setCurrTab(TAB_NAME.HOME);
     else
       setCurrTab(pathName.charAt(1).toUpperCase() + pathName.slice(2));
+
+    setShowNav(false);
   }, [pathName]);
 
   return (

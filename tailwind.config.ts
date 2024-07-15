@@ -12,7 +12,8 @@ const config: Config = {
       'secondary': '#111111',
       'third': '#767676',
       'fourth': '#f1f1f1',
-      'white': '#FFFFFF'
+      'white': '#FFFFFF',
+      'black': '#000000'
     },
     fontFamily: {
       special: ['Pacifico', 'cursive'],
