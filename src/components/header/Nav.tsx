@@ -1,9 +1,16 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { PATH_NAME, TAB_NAME } from '@/utils/constants';
+import { useStores } from '@/store';
+import { THEME } from '@/utils/enums';
+import { handleContact } from '../home';
 
 export const Nav = () => {
-  const activeStyle = 'bg-secondary rounded-full text-white px-4 py-2';
+  const { generalStore } = useStores();
+  const { theme } = generalStore;
+  const activeStyle = theme === THEME.LIGHT
+    ? 'bg-secondary rounded-full text-fourth px-4 py-2'
+    : 'bg-white rounded-full text-secondary px-4 py-2';
   const pathName = usePathname();
 
   return (
@@ -21,8 +28,11 @@ export const Nav = () => {
         <li className={`items-center flex ${pathName == PATH_NAME.SKILLS && activeStyle} ml-8`}>
           <Link href={PATH_NAME.SKILLS}>{TAB_NAME.SKILLS}</Link>
         </li>
-        <li className={`items-center flex ${pathName == PATH_NAME.CONTACT && activeStyle} ml-8`}>
-          <Link href={PATH_NAME.CONTACT}>{TAB_NAME.CONTACT}</Link>
+        <li
+          className={'items-center flex ml-8 cursor-pointer'}
+          onClick={handleContact}
+        >
+          {TAB_NAME.CONTACT}
         </li>
       </ul>
     </nav>

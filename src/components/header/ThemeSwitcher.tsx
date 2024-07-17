@@ -29,6 +29,18 @@ export const ThemeSwitcher = observer(() => {
     else generalStore.setSystemMode(mode);
   });
 
+  // Preseting body bg
+  useEffect(() => {
+    if (generalStore.theme === THEME.LIGHT) {
+      document.body.classList.add('bg-white');
+      document.body.classList.remove('bg-secondary');
+    }
+    else {
+      document.body.classList.remove('bg-white');
+      document.body.classList.add('bg-secondary');
+    }
+  }, [generalStore.theme]);
+
   // Handling change mode
   useEffect(() => {
     switch (generalStore.mode) {
@@ -47,7 +59,7 @@ export const ThemeSwitcher = observer(() => {
           generalStore.setTheme(THEME.DARK);
         }
         else {
-          localStorage.setItem(STORAGE_KEY.MODE, MODE.LIGHT);
+          generalStore.setTheme(THEME.LIGHT);
         }
         window
           .matchMedia('(prefers-color-scheme: dark)')
@@ -64,9 +76,11 @@ export const ThemeSwitcher = observer(() => {
   }, [generalStore.mode]);
 
   return (
-    <div className='h-full ml-2 md:ml-8 flex items-center relative'>
+    <div className={'h-full ml-2 md:ml-8 flex items-center relative'}>
       <SmoothUl
-        className={'flex flex-col justify-center absolute top-14 right-0 border border-fourth shadow rounded-2xl bg-white p-2 cursor-pointer'}
+        className={`flex flex-col justify-center absolute top-14 right-0 border shadow rounded-2xl p-2 cursor-pointer
+          ${generalStore.theme === THEME.DARK ? 'bg-secondary border-third' : 'bg-white border-fourth'}
+        `}
         button={
           <div className='h-fit hover:bg-fourth cursor-pointer p-2 rounded-2xl'>
             {generalStore.theme === THEME.DARK && <DarkIcon color='#e60022' size={30} />}
@@ -75,7 +89,7 @@ export const ThemeSwitcher = observer(() => {
         }
       >
         <li
-          className='p-2 w-40 rounded-2xl hover:bg-fourth flex items-center'
+          className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
           onClick={() => generalStore.setSystemMode(MODE.SYSTEM)}
         >
           <SystemIcon color='#e60022' size={20} className='mr-2' />
@@ -83,7 +97,7 @@ export const ThemeSwitcher = observer(() => {
           {generalStore.mode === MODE.SYSTEM && <FaCheck className='ml-auto' color='#e60022' />}
         </li>
         <li
-          className='p-2 w-40 rounded-2xl hover:bg-fourth flex items-center'
+          className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
           onClick={() => generalStore.setSystemMode(MODE.LIGHT)}
         >
           <LightIcon color='#e60022' size={20} className='mr-2' />
@@ -91,7 +105,7 @@ export const ThemeSwitcher = observer(() => {
           {generalStore.mode === MODE.LIGHT && <FaCheck className='ml-auto' color='#e60022' />}
         </li>
         <li
-          className='p-2 w-40 rounded-2xl hover:bg-fourth flex items-center'
+          className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
           onClick={() => generalStore.setSystemMode(MODE.DARK)}
         >
           <DarkIcon color='#e60022' size={20} className='mr-2' />

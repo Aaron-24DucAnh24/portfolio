@@ -4,21 +4,18 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Aaron Portfolio',
-  description: 'Not found',
+  description: 'Loading',
 };
 
 export default function Page() {
   return (
-    <main className="h-fit-screen mt-16 flex justify-center items-center flex-col">
+    <main className="h-fit-screen mt-16 flex justify-center items-center flex-col animate-floating">
       <Image
-        src={STATIC_URLS.ERROR_404}
-        alt={'404'}
+        src={STATIC_URLS.LOGO}
+        alt={STATIC_URLS.LOGO}
         width={300}
         height={150}
       />
-      <div className='mt-10 text-lg'>
-        {'The page you\'re looking for doesn\'t exist.'}
-      </div>
     </main>
   );
 }

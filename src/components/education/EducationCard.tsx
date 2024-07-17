@@ -3,6 +3,9 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { ShrinkBorder } from '../general/ShrinkBorder';
+import { observer } from 'mobx-react-lite';
+import { useStores } from '@/store';
+import { THEME } from '@/utils/enums';
 
 interface IEducationCard {
   image: string,
@@ -13,13 +16,16 @@ interface IEducationCard {
   to: string,
 }
 
-export const EducationCard = (props: IEducationCard) => {
+export const EducationCard = observer((props: IEducationCard) => {
   const { image, orgName, degreeName, score, from, to } = props;
   const [isHover, setIsHover] = useState<boolean>(false);
+  const { generalStore } = useStores();
 
   return (
     <div
-      className='mb-4 p shadow-md hover:shadow-2xl rounded-lg overflow-hidden'
+      className={`mb-4 p shadow-md hover:shadow-2xl rounded-lg overflow-hidden border
+        ${generalStore.theme === THEME.DARK ? 'bg-fifth border-third' : 'border-fourth'}
+      `}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
@@ -51,4 +57,4 @@ export const EducationCard = (props: IEducationCard) => {
       <ShrinkBorder isHover={isHover} />
     </div>
   );
-};
+});

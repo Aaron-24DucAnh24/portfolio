@@ -1,3 +1,5 @@
+import { useStores } from '@/store';
+import { THEME } from '@/utils/enums';
 import { useClickOutside } from '@/utils/hooks';
 import {
   ReactNode,

@@ -10,10 +10,11 @@ const config: Config = {
     colors: {
       'primary': '#e60022',
       'secondary': '#111111',
-      'third': '#767676',
+      'third': '#898989',
       'fourth': '#f1f1f1',
+      'fifth': '#151515',
       'white': '#FFFFFF',
-      'black': '#000000'
+      'black': '#111111'
     },
     fontFamily: {
       special: ['Pacifico', 'cursive'],
@@ -95,6 +96,17 @@ const config: Config = {
           opacity: '1'
         }
       },
+      'floating': {
+        '0%': {
+          transform: 'scale(0.9, 0.9)',
+        },
+        '50%': {
+          transform: 'scale(1.2, 1.2)',
+        },
+        '100%': {
+          transform: 'scale(0.9, 0.9)',
+        }
+      },
     },
     animation: {
       shake: 'shake 2s linear infinite',
@@ -107,6 +119,7 @@ const config: Config = {
       'shrink-in': 'shrink-in 1s linear',
       'slide-up': 'slide-up 0.35s ease-out',
       'slide-down': 'slide-down 0.35s ease-out',
+      'floating': 'floating 1s ease-out infinite',
 
     },
   },

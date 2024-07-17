@@ -5,6 +5,9 @@ import { Button } from '../general/Button';
 import { FaAngleDown, FaGithub, FaAngleUp } from 'react-icons/fa';
 import { useState } from 'react';
 import { ShrinkBorder } from '../general/ShrinkBorder';
+import { observer } from 'mobx-react-lite';
+import { useStores } from '@/store';
+import { THEME } from '@/utils/enums';
 
 interface IPersonalProjectCard {
   name: string,
@@ -15,16 +18,19 @@ interface IPersonalProjectCard {
   desc: JSX.Element,
 }
 
-export const PersonalProjectCard = (props: IPersonalProjectCard) => {
+export const PersonalProjectCard = observer((props: IPersonalProjectCard) => {
   const { name, type, techs, image, source, desc } = props;
   const [hideDesc, setHideDesc] = useState<boolean>(true);
   const [isHover, setIsHover] = useState<boolean>(false);
+  const { generalStore } = useStores();
 
   return (
     <div
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      className='shadow-md hover:shadow-2xl rounded-lg h-fit overflow-hidden'
+      className={`shadow-md hover:shadow-2xl rounded-lg h-fit overflow-hidden border
+        ${generalStore.theme === THEME.DARK ? 'text-fourth border-third bg-fifth' : 'border-fourth'}
+      `}
     >
       <div className="h-fit w-full flex flex-col sm:flex-row" >
         <div className='relative m-4 sm:m-0 w-72 h-40 sm:w-80 sm:h-56 md:w-96 md:h-60 rounded-lg overflow-hidden shadow-lg'>
@@ -64,4 +70,4 @@ export const PersonalProjectCard = (props: IPersonalProjectCard) => {
       <ShrinkBorder isHover={isHover} />
     </div>
   );
-};
+});

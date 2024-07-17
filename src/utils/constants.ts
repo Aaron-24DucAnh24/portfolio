@@ -8,7 +8,31 @@ export const STATIC_URLS = {
   IDP: '/idp.png',
   HCMUT: '/hcmut.jpg',
   PETOPIA: '/petopia.png',
-  NETPOWER: '/netpower.png'
+  NETPOWER: '/netpower.png',
+  PROGRAMMING: '/programming.png',
+  C_SHARP: '/csharp.png',
+  CPP: '/cpp.png',
+  JS: '/js.png',
+  PYTHON: '/python.png',
+  TS: '/ts.png',
+  FE: '/fe.png',
+  MOBX: '/mobx.png',
+  NEXT: '/next.png',
+  REACT: '/react.png',
+  TAILWIND: '/tailwind.png',
+  CY: '/cy.png',
+  BE: '/be.png',
+  FLASK: '/flask.png',
+  EXPRESS: '/express.png',
+  NET: '/net.png',
+  TOOLS: '/tools.png',
+  DOCKER: '/docker.png',
+  GIT: '/git.png',
+  AZURE: '/azure.png',
+  MONGO: '/mongodb.png',
+  REDIS: '/redis.jpeg',
+  MYSQL: '/mysql.png',
+  MSSQL: '/mssql.png',
 };
 
 export const PATH_NAME = {
@@ -16,7 +40,6 @@ export const PATH_NAME = {
   EDUCATION: '/education',
   PROJECTS: '/experiences',
   SKILLS: '/skills',
-  CONTACT: '/contact',
 };
 
 export const TAB_NAME = {

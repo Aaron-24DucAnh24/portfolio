@@ -1,10 +1,19 @@
+'use client';
+
 import { STATIC_URLS } from '@/utils/constants';
 import { EducationCard } from './EducationCard';
 import { HiOutlineBookOpen } from 'react-icons/hi';
+import { THEME } from '@/utils/enums';
+import { useStores } from '@/store';
+import { observer } from 'mobx-react-lite';
 
-export const EducationPage = () => {
+export const EducationPage = observer(() => {
+  const { generalStore } = useStores();
+
   return (
-    <div className='max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col'>
+    <div className={`max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col
+      ${generalStore.theme === THEME.DARK && 'text-fourth'}
+    `}>
       <h1 className='pb-2 sm:pb-12 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
         Education and Certificates
         <HiOutlineBookOpen color='#e60022' size={40} className='pl-2' />
@@ -29,4 +38,4 @@ export const EducationPage = () => {
       </div>
     </div>
   );
-};
+});

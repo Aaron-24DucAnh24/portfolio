@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { ShrinkBorder } from '../general/ShrinkBorder';
+import { THEME } from '@/utils/enums';
+import { observer } from 'mobx-react-lite';
+import { useStores } from '@/store';
 
 interface IExperienceCard {
   name: string,
@@ -11,18 +14,21 @@ interface IExperienceCard {
   className: string,
 }
 
-export const ExperienceCard = (props: IExperienceCard) => {
+export const ExperienceCard = observer((props: IExperienceCard) => {
   const { name, image, position, time, desc, className } = props;
   const [isHover, setIsHover] = useState<boolean>(false);
+  const { generalStore } = useStores();
 
   return (
     <div className='w-full md:w-1/2 px-4 sm:pb-8'>
       <div
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        className='flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-2xl'
+        className={`flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-2xl border
+          ${generalStore.theme === THEME.DARK ? 'text-fourth border-third bg-fifth' : 'border-fourth'}
+        `}
       >
-        <div className='relative w-full h-36 flex justify-center items-center text-white font-medium'>
+        <div className='relative w-full h-36 flex justify-center items-center text-fourth font-medium'>
           <div className={`${className} absolute top-0 left-0 right-0 bottom-0 brightness-90`}></div>
           <p className='absolute'>{name}</p>
           <div className='absolute h-24 w-24 rounded-full overflow-hidden -bottom-12 shadow-xl'>
@@ -48,4 +54,4 @@ export const ExperienceCard = (props: IExperienceCard) => {
       </div>
     </div>
   );
-};
+});

@@ -37,7 +37,7 @@
 
 .dotted-li::before {
   content: '.';
-  color: #000;
+  color: #898989;
   position: absolute;
   left: 0;
   top: -4px;

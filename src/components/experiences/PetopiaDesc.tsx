@@ -18,9 +18,21 @@ export const PetopiaDesc = () => {
       </ul>
       <p className='font-medium mt-4 mb-2'>SOURCE:</p>
       <ul className='text-sm text-third space-y-1'>
-        <li className='dotted-li italic hover:underline'><Link href="https://github.com/Aaron-24DucAnh24/Petopia-Backoffice">https://github.com/Aaron-24DucAnh24/Petopia-Backoffice</Link></li>
-        <li className='dotted-li italic hover:underline'><Link href="https://github.com/Aaron-24DucAnh24/Petopia-Frontend">https://github.com/Aaron-24DucAnh24/Petopia-Frontend</Link></li>
-        <li className='dotted-li italic hover:underline'><Link href="https://github.com/Aaron-24DucAnh24/Petopia-Backend">https://github.com/Aaron-24DucAnh24/Petopia-Backend</Link></li>
+        <li className='dotted-li italic hover:underline hover:text-primary hover:font-medium'>
+          <Link href="https://github.com/Aaron-24DucAnh24/Petopia-Backoffice">
+            https://github.com/Aaron-24DucAnh24/Petopia-Backoffice
+          </Link>
+        </li>
+        <li className='dotted-li italic hover:underline hover:text-primary hover:font-medium'>
+          <Link href="https://github.com/Aaron-24DucAnh24/Petopia-Frontend">
+            https://github.com/Aaron-24DucAnh24/Petopia-Frontend
+          </Link>
+        </li>
+        <li className='dotted-li italic hover:underline hover:text-primary hover:font-medium'>
+          <Link href="https://github.com/Aaron-24DucAnh24/Petopia-Backend">
+            https://github.com/Aaron-24DucAnh24/Petopia-Backend
+          </Link>
+        </li>
       </ul>
     </div>
   );
