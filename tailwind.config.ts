@@ -75,6 +75,26 @@ const config: Config = {
         '0%': { width: '100%' },
         '100%': { width: '75%' },
       },
+      'slide-down': {
+        '0%': {
+          transform: 'translateY(-16px)',
+          opacity: '0'
+        },
+        '100%': {
+          transform: 'translateY()',
+          opacity: '1'
+        }
+      },
+      'slide-up': {
+        '100%': {
+          transform: 'translateY(-16px)',
+          opacity: '0'
+        },
+        '0%': {
+          transform: 'translateY()',
+          opacity: '1'
+        }
+      },
     },
     animation: {
       shake: 'shake 2s linear infinite',
@@ -85,6 +105,9 @@ const config: Config = {
       'slide-in': 'slide-in 0.5s linear',
       'shrink-out': 'shrink-out 1s linear',
       'shrink-in': 'shrink-in 1s linear',
+      'slide-up': 'slide-up 0.35s ease-out',
+      'slide-down': 'slide-down 0.35s ease-out',
+
     },
   },
   plugins: [],

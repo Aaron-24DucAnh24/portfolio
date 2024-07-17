@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { ShrinkBorder } from '../general/ShrinkBorder';
 
 interface IEducationCard {
   image: string,
@@ -18,7 +19,7 @@ export const EducationCard = (props: IEducationCard) => {
 
   return (
     <div
-      className='mb-4 p shadow-lg hover:bg-fourth rounded-lg overflow-hidden'
+      className='mb-4 p shadow-md hover:shadow-2xl rounded-lg overflow-hidden'
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
@@ -47,9 +48,7 @@ export const EducationCard = (props: IEducationCard) => {
           </div>
         </div>
       </div>
-      <hr className={`border-2 mt-2 sm:mt-3
-        ${isHover ? 'border-primary animate-shrink-out w-full' : 'border-fourth animate-shrink-in w-3/4'}`}
-      />
+      <ShrinkBorder isHover={isHover} />
     </div>
   );
 };

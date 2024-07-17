@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Button } from '../general/Button';
 import { FaAngleDown, FaGithub, FaAngleUp } from 'react-icons/fa';
 import { useState } from 'react';
+import { ShrinkBorder } from '../general/ShrinkBorder';
 
 interface IPersonalProjectCard {
   name: string,
@@ -17,10 +18,14 @@ interface IPersonalProjectCard {
 export const PersonalProjectCard = (props: IPersonalProjectCard) => {
   const { name, type, techs, image, source, desc } = props;
   const [hideDesc, setHideDesc] = useState<boolean>(true);
+  const [isHover, setIsHover] = useState<boolean>(false);
 
   return (
-    <div className={'shadow-md hover:shadow-2xl rounded-lg h-fit'
-    }>
+    <div
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      className='shadow-md hover:shadow-2xl rounded-lg h-fit overflow-hidden'
+    >
       <div className="h-fit w-full flex flex-col sm:flex-row" >
         <div className='relative m-4 sm:m-0 w-72 h-40 sm:w-80 sm:h-56 md:w-96 md:h-60 rounded-lg overflow-hidden shadow-lg'>
           <Image
@@ -56,6 +61,7 @@ export const PersonalProjectCard = (props: IPersonalProjectCard) => {
         </div>
       </div>
       {!hideDesc && desc}
+      <ShrinkBorder isHover={isHover} />
     </div>
   );
 };

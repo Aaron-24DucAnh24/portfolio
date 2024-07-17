@@ -3,6 +3,7 @@ import { Logo } from '../general/Logo';
 import { MobileNav } from './MobileNav';
 import { Nav } from './Nav';
 import { ThemeSwitcher } from './ThemeSwitcher';
+// import { ThemeSwitcher } from './ThemeSwitcher';
 
 export const Header = () => {
   return (
