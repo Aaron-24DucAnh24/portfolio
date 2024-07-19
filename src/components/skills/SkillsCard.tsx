@@ -24,7 +24,7 @@ export const SkillsCard = observer((props: ISkillsCard) => {
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         className={`rounded-lg overflow-hidden shadow-md hover:shadow-2xl border
-          ${generalStore.theme === THEME.DARK ? 'text-fourth border-third bg-fifth' : 'border-fourth'}
+          ${generalStore.theme === THEME.DARK && 'bg-fifth border-third'}
         `}
       >
         <div className={'flex flex-col p-2 items-center space-y-2'}>

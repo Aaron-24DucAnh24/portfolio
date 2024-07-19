@@ -18,6 +18,7 @@ const config: Config = {
     },
     fontFamily: {
       special: ['Pacifico', 'cursive'],
+      normal: ['Finlandica', 'sans-serif'],
     },
     keyframes: {
       shake: {
@@ -153,7 +154,7 @@ const config: Config = {
       'slide-down': 'slide-down 0.35s ease-out',
       floating: 'floating 1s ease-out infinite',
       'cover-out': 'coverOut 1.2s ease-out',
-      'cover-in': 'coverIn 1.2s ease-out',
+      'cover-in': 'coverIn 1.5s ease-out',
       zoom: 'zoom 0.5s ease-in',
     },
   },

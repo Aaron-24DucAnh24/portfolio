@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const Logo = () => {
   return (
-    <a href="/" className="font-special text-2xl font-bold h-full flex items-center relative justify-self-start">
+    <a href="/" className="!font-special text-2xl font-bold h-full flex items-center relative justify-self-start">
       <Image
         src={STATIC_URLS.LOGO}
         alt={'22-logo'}

@@ -29,7 +29,7 @@ export const PersonalProjectCard = observer((props: IPersonalProjectCard) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className={`shadow-md hover:shadow-2xl rounded-lg h-fit overflow-hidden border
-        ${generalStore.theme === THEME.DARK ? 'text-fourth border-third bg-fifth' : 'border-fourth'}
+        ${generalStore.theme === THEME.DARK && 'border-third bg-fifth'}
       `}
     >
       <div className="h-fit w-full flex flex-col sm:flex-row" >
@@ -43,10 +43,10 @@ export const PersonalProjectCard = observer((props: IPersonalProjectCard) => {
         </div>
 
         <div className='flex flex-col p-4 space-y-1 sm:space-y-2 flex-1'>
-          <div className='text-base font-semibold'>
+          <div className='text-base font-bold'>
             {name}
           </div>
-          <div className='text-base'>
+          <div className='text-base uppercase font-medium'>
             {type}
           </div>
           <div className='text-third text-xs sm:text-sm italic font-semibold'>

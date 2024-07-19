@@ -1,12 +1,8 @@
 'use client';
-
 import { STATIC_URLS } from '@/utils/constants';
 import { Button } from '../general/Button';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
-import { observer } from 'mobx-react-lite';
-import { useStores } from '@/store';
-import { THEME } from '@/utils/enums';
 
 export const handleContact = () => {
   window.scroll({
@@ -15,14 +11,9 @@ export const handleContact = () => {
   });
 };
 
-export const HomePage = observer(() => {
-  const { generalStore } = useStores();
-  const { theme } = generalStore;
-
+export const HomePage = () => {
   return (
-    <div className={`h-full w-full flex flex-col sm:flex-wrap sm:flex-row 
-      ${theme === THEME.DARK && 'text-fourth'}`
-    }>
+    <div className={'h-full w-full flex flex-col sm:flex-wrap sm:flex-row'}>
       <div
         className='h-1/2 sm:h-full w-full sm:w-1/2 flex flex-col justify-center space-y-8 p-4'>
         <div className='text-xl md:text-3xl font-semibold flex items-center sm:tracking-tighter'>
@@ -52,7 +43,7 @@ export const HomePage = observer(() => {
               fontSize: '1.25rem',
               display: 'inline-block',
               color: '#e60022',
-              fontWeight: 500,
+              fontWeight: 600,
             }
             }
           />
@@ -112,4 +103,4 @@ export const HomePage = observer(() => {
       </div>
     </div>
   );
-});
+};

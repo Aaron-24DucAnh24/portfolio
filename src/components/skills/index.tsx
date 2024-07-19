@@ -3,17 +3,11 @@
 import { PiGearBold } from 'react-icons/pi';
 import { SkillsCard } from './SkillsCard';
 import { STATIC_URLS } from '@/utils/constants';
-import { THEME } from '@/utils/enums';
 import { observer } from 'mobx-react-lite';
-import { useStores } from '@/store';
 
 export const SkillsPage = observer(() => {
-  const { generalStore } = useStores();
-
   return (
-    <div className={`max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col
-      ${generalStore.theme === THEME.DARK && 'text-fourth'}
-    `}>
+    <div className={'max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col'}>
       <h1 className='pb-2 sm:pb-12 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
         Technical Skills
         <PiGearBold color='#e60022' size={40} className='pl-2' />
