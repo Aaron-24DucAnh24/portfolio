@@ -3,7 +3,7 @@ import { MODE, STORAGE_KEY } from '@/utils/constants';
 import { THEME } from '@/utils/enums';
 import { useRunOnce } from '@/utils/hooks';
 import { observer } from 'mobx-react-lite';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa6';
 import {
   MdOutlineDarkMode as DarkIcon,
@@ -14,11 +14,30 @@ import { SmoothUl } from '../general/SmoothUl';
 
 export const ThemeSwitcher = observer(() => {
   const { generalStore } = useStores();
+  const [showCover, setShowCover] = useState(false);
+  const [coverHidden, setCoverHidden] = useState(true);
+  const [mode, setMode] = useState(generalStore.mode);
 
   // HANDLERS
   const handleSysemTheme = (e: MediaQueryListEvent) => {
     e.matches && generalStore.mode === MODE.SYSTEM && generalStore.setTheme(THEME.DARK);
     !e.matches && generalStore.mode === MODE.SYSTEM && generalStore.setTheme(THEME.LIGHT);
+  };
+
+  const handleOnClickOption = (mode: string) => {
+    setMode(mode);
+    setShowCover(true);
+  };
+
+  const handleOnAnimatedEnd = () => {
+    if (coverHidden) {
+      generalStore.setSystemMode(mode);
+      setCoverHidden(false);
+    }
+    else {
+      setShowCover(false);
+      setCoverHidden(true);
+    }
   };
 
   // EFFECTS
@@ -90,7 +109,7 @@ export const ThemeSwitcher = observer(() => {
       >
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => generalStore.setSystemMode(MODE.SYSTEM)}
+          onClick={() => handleOnClickOption(MODE.SYSTEM)}
         >
           <SystemIcon color='#e60022' size={20} className='mr-2' />
           {MODE.SYSTEM}
@@ -98,7 +117,7 @@ export const ThemeSwitcher = observer(() => {
         </li>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => generalStore.setSystemMode(MODE.LIGHT)}
+          onClick={() => handleOnClickOption(MODE.LIGHT)}
         >
           <LightIcon color='#e60022' size={20} className='mr-2' />
           {MODE.LIGHT}
@@ -106,14 +125,22 @@ export const ThemeSwitcher = observer(() => {
         </li>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => generalStore.setSystemMode(MODE.DARK)}
+          onClick={() => handleOnClickOption(MODE.DARK)}
         >
           <DarkIcon color='#e60022' size={20} className='mr-2' />
           {MODE.DARK}
           {generalStore.mode === MODE.DARK && <FaCheck className='ml-auto' color='#e60022' />}
-
         </li>
       </SmoothUl>
+      {
+        showCover && <div
+          onAnimationEnd={handleOnAnimatedEnd}
+          className={`
+            fixed rounded-3xl rounded-r-none bg-primary brightness-95
+            ${coverHidden ? 'animate-cover-out' : 'animate-cover-in'}
+          `}
+        />
+      }
     </div>
   );
 });

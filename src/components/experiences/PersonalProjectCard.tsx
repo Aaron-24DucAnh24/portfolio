@@ -33,7 +33,7 @@ export const PersonalProjectCard = observer((props: IPersonalProjectCard) => {
       `}
     >
       <div className="h-fit w-full flex flex-col sm:flex-row" >
-        <div className='relative m-4 sm:m-0 w-72 h-40 sm:w-80 sm:h-56 md:w-96 md:h-60 rounded-lg overflow-hidden shadow-lg'>
+        <div className='relative m-4 sm:m-0 w-72 h-40 sm:w-80 sm:h-56 md:w-96 md:h-60 overflow-hidden shadow-lg'>
           <Image
             className='object-cover'
             src={image}

@@ -61,7 +61,7 @@ export const HomePage = observer(() => {
           {'I\'m passionate about continuous learning and committed to creating robust, user-friendly software solutions. I\'m excited to find an entry-level position where I can grow my skills and contribute to the success of a company.'}
         </div>
         <div className='flex space-x-2'>
-          <Button name={'Download my CV'} action={() => { }} primary />
+          <Button name={'My CV'} action={() => { }} primary />
           <Button name={'Contact me'} action={handleContact} />
         </div>
       </div>

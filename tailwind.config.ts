@@ -68,14 +68,6 @@ const config: Config = {
           opacity: '1'
         }
       },
-      'shrink-out': {
-        '0%': { width: '75%' },
-        '100%': { width: '100%' },
-      },
-      'shrink-in': {
-        '0%': { width: '100%' },
-        '100%': { width: '75%' },
-      },
       'slide-down': {
         '0%': {
           transform: 'translateY(-16px)',
@@ -96,7 +88,7 @@ const config: Config = {
           opacity: '1'
         }
       },
-      'floating': {
+      floating: {
         '0%': {
           transform: 'scale(0.9, 0.9)',
         },
@@ -107,6 +99,48 @@ const config: Config = {
           transform: 'scale(0.9, 0.9)',
         }
       },
+      coverOut: {
+        '0%': {
+          top: '0',
+          left: '100%',
+          right: '0',
+          bottom: '100%',
+        },
+        '100%': {
+          top: '0',
+          left: '-10%',
+          right: '0',
+          bottom: '-10%',
+        },
+      },
+      coverIn: {
+        '100%': {
+          top: '0',
+          left: '100%',
+          right: '0',
+          bottom: '100%',
+        },
+        '0%': {
+          top: '0',
+          left: '-10%',
+          right: '0',
+          bottom: '-10%',
+        },
+      },
+      zoom: {
+        '0%': {
+          opacity: '0',
+          transform: 'scale(1, 1)',
+        },
+        '75%': {
+          opacity: '0.7',
+          transform: 'scale(1.2, 1.2)',
+        },
+        '100%': {
+          opacity: '0',
+          transform: 'scale(1.5, 1.5)',
+        }
+      }
     },
     animation: {
       shake: 'shake 2s linear infinite',
@@ -115,12 +149,12 @@ const config: Config = {
       'bound-y': 'bound-y 1.5s linear infinite',
       'bound-y-reverse': 'bound-y-reverse 1.5s linear infinite',
       'slide-in': 'slide-in 0.5s linear',
-      'shrink-out': 'shrink-out 1s linear',
-      'shrink-in': 'shrink-in 1s linear',
       'slide-up': 'slide-up 0.35s ease-out',
       'slide-down': 'slide-down 0.35s ease-out',
-      'floating': 'floating 1s ease-out infinite',
-
+      floating: 'floating 1s ease-out infinite',
+      'cover-out': 'coverOut 1.2s ease-out',
+      'cover-in': 'coverIn 1.2s ease-out',
+      zoom: 'zoom 0.5s ease-in',
     },
   },
   plugins: [],

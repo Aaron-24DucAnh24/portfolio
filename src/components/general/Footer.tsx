@@ -100,7 +100,7 @@ export const Footer = observer(() => {
 
         <div className="flex items-center justify-center text-sm  mt-4">
           Make with
-          <FaHeart color='#e60022' className='mx-2' />
+          <FaHeart color='#e60022' className='mx-2 animate-floating' />
           by Duc Anh Bui.
         </div>
       </div>

@@ -30,7 +30,7 @@ export const EducationCard = observer((props: IEducationCard) => {
       onMouseLeave={() => setIsHover(false)}
     >
       <div className="p-4 sm:p-0 h-fit w-full flex flex-col sm:flex-row">
-        <div className='relative mb-4 sm:mb-0 mr-0 sm:mr-12 w-72 h-32 sm:w-80 sm:h-40 rounded-lg overflow-hidden shadow-lg'>
+        <div className='relative mb-4 sm:mb-0 mr-0 sm:mr-12 w-72 h-32 sm:w-80 sm:h-40 overflow-hidden shadow-lg'>
           <Image
             className='object-cover'
             src={image}
