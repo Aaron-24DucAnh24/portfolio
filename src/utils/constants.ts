@@ -1,6 +1,6 @@
 export const STATIC_URLS = {
   LOGO: '/22-logo.png',
-  ERROR_404: '/404.jpg',
+  ERROR_404: '/404.png',
   WAVING_HAND: '/waving-hand.png',
   DUCANH: '/ducanh.jpg',
   '22': '/22.jpg',
