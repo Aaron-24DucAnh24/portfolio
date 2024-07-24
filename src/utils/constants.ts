@@ -33,6 +33,7 @@ export const STATIC_URLS = {
   REDIS: '/redis.jpeg',
   MYSQL: '/mysql.png',
   MSSQL: '/mssql.png',
+  QUANG_TRUNG: '/quangtrung.png'
 };
 
 export const PATH_NAME = {

@@ -26,6 +26,14 @@ export const EducationPage = () => {
           from={'2022'}
           to={'2024'}
         />
+        <EducationCard
+          image={STATIC_URLS.QUANG_TRUNG}
+          orgName={'Quang-trung gifted high school'}
+          degreeName={'Specialized Chemistry Student'}
+          score={'Excellent'}
+          from={'2017'}
+          to={'2020'}
+        />
       </div>
     </div>
   );
