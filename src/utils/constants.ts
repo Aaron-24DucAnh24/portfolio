@@ -33,7 +33,8 @@ export const STATIC_URLS = {
   REDIS: '/redis.jpeg',
   MYSQL: '/mysql.png',
   MSSQL: '/mssql.png',
-  QUANG_TRUNG: '/quangtrung.png'
+  QUANG_TRUNG: '/quangtrung.png',
+  CV: 'https://drive.google.com/drive/folders/1oJ4_Kta3MXeWfJUvFn2JWXPjX-oCK1Ci?usp=sharing',
 };
 
 export const PATH_NAME = {
