@@ -16,14 +16,14 @@ export const Nav = () => {
   return (
     <nav className="h-full hidden md:flex ml-auto">
       <ul className="flex text-base font-medium h-full items-center">
-        <li className={`flex items-center  ${pathName == PATH_NAME.HOME && activeStyle}`}>
-          <Link href={PATH_NAME.HOME}>{TAB_NAME.HOME}</Link>
-        </li>
-        <li className={`flex items-center  ${pathName == PATH_NAME.EDUCATION && activeStyle} ml-8`}>
-          <Link href={PATH_NAME.EDUCATION}>{TAB_NAME.EDUCATION}</Link>
+        <li className={`items-center flex  ${pathName == PATH_NAME.EXPERIENCES && activeStyle} ml-8`}>
+          <Link href={PATH_NAME.EXPERIENCES}>{TAB_NAME.EXPERIENCES}</Link>
         </li>
         <li className={`items-center flex  ${pathName == PATH_NAME.PROJECTS && activeStyle} ml-8`}>
           <Link href={PATH_NAME.PROJECTS}>{TAB_NAME.PROJECTS}</Link>
+        </li>
+        <li className={`flex items-center  ${pathName == PATH_NAME.EDUCATION && activeStyle} ml-8`}>
+          <Link href={PATH_NAME.EDUCATION}>{TAB_NAME.EDUCATION}</Link>
         </li>
         <li className={`items-center flex  ${pathName == PATH_NAME.SKILLS && activeStyle} ml-8`}>
           <Link href={PATH_NAME.SKILLS}>{TAB_NAME.SKILLS}</Link>

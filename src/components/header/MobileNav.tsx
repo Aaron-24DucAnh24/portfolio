@@ -51,14 +51,20 @@ export const MobileNav = () => {
         </li>
         <li>
           <Link className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex justify-between items-center'
-            href={PATH_NAME.EDUCATION}>{TAB_NAME.EDUCATION}
-            {pathName === PATH_NAME.EDUCATION && <FaCheck color={'#e60022'} />}
+            href={PATH_NAME.EXPERIENCES}>{TAB_NAME.EXPERIENCES}
+            {pathName === PATH_NAME.EXPERIENCES && <FaCheck color={'#e60022'} />}
           </Link>
         </li>
         <li>
           <Link className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex justify-between items-center'
             href={PATH_NAME.PROJECTS}>{TAB_NAME.PROJECTS}
             {pathName === PATH_NAME.PROJECTS && <FaCheck color={'#e60022'} />}
+          </Link>
+        </li>
+        <li>
+          <Link className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex justify-between items-center'
+            href={PATH_NAME.EDUCATION}>{TAB_NAME.EDUCATION}
+            {pathName === PATH_NAME.EDUCATION && <FaCheck color={'#e60022'} />}
           </Link>
         </li>
         <li>

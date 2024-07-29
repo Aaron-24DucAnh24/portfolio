@@ -24,7 +24,7 @@ export const ExperienceCard = observer((props: IExperienceCard) => {
       <div
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        className={`flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-2xl border
+        className={`flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-2xl border relative
           ${generalStore.theme === THEME.DARK && 'bg-fifth border-third'}
         `}
       >

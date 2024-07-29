@@ -23,6 +23,13 @@ export const SkillsPage = observer(() => {
             STATIC_URLS.TS,
             STATIC_URLS.PYTHON
           ]}
+          techNames={[
+            'C++',
+            'C#',
+            'Javascript',
+            'Typescript',
+            'Python',
+          ]}
         />
         <SkillsCard
           name={'Frontend'}
@@ -30,9 +37,14 @@ export const SkillsPage = observer(() => {
           items={[
             STATIC_URLS.NEXT,
             STATIC_URLS.REACT,
-            STATIC_URLS.CY,
             STATIC_URLS.TAILWIND,
             STATIC_URLS.MOBX,
+          ]}
+          techNames={[
+            'NextJs',
+            'ReactJs',
+            'TailwindCSS',
+            'MobX'
           ]}
         />
         <SkillsCard
@@ -40,12 +52,17 @@ export const SkillsPage = observer(() => {
           image={STATIC_URLS.BE}
           items={[
             STATIC_URLS.NET,
-            STATIC_URLS.EXPRESS,
-            STATIC_URLS.FLASK,
             STATIC_URLS.MSSQL,
             STATIC_URLS.MYSQL,
             STATIC_URLS.MONGO,
             STATIC_URLS.REDIS,
+          ]}
+          techNames={[
+            '.NET',
+            'MSSQL',
+            'MySQL',
+            'MongoDB',
+            'Redis',
           ]}
         />
         <SkillsCard
@@ -55,6 +72,13 @@ export const SkillsPage = observer(() => {
             STATIC_URLS.DOCKER,
             STATIC_URLS.GIT,
             STATIC_URLS.AZURE,
+            STATIC_URLS.CY
+          ]}
+          techNames={[
+            'Docker',
+            'Git',
+            'Azure',
+            'Cypress'
           ]}
         />
       </div>

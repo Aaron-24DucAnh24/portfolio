@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Button } from '../general/Button';
 import { FaAngleDown, FaGithub, FaAngleUp } from 'react-icons/fa';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ShrinkBorder } from '../general/ShrinkBorder';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '@/store';
@@ -28,11 +28,11 @@ export const PersonalProjectCard = observer((props: IPersonalProjectCard) => {
     <div
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      className={`shadow-md hover:shadow-2xl rounded-lg h-fit overflow-hidden border
+      className={`shadow-md hover:shadow-2xl rounded-lg overflow-hidden border duration-1000 relative
         ${generalStore.theme === THEME.DARK && 'border-third bg-fifth'}
       `}
     >
-      <div className="h-fit w-full flex flex-col sm:flex-row" >
+      <div className={'w-full flex flex-col sm:flex-row'}>
         <div className='relative m-4 sm:m-0 w-72 h-40 sm:w-80 sm:h-56 md:w-96 md:h-60 overflow-hidden shadow-lg'>
           <Image
             className='object-cover'

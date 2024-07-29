@@ -40,16 +40,19 @@ export const STATIC_URLS = {
 export const PATH_NAME = {
   HOME: '/',
   EDUCATION: '/education',
-  PROJECTS: '/experiences',
+  EXPERIENCES: '/experiences',
   SKILLS: '/skills',
+  PROJECTS: '/projects',
 };
 
 export const TAB_NAME = {
   HOME: 'Home',
   EDUCATION: 'Education',
-  PROJECTS: 'Experiences',
+  EXPERIENCES: 'Experiences',
   SKILLS: 'Skills',
   CONTACT: 'Contact',
+  PROJECTS: 'Projects',
+
 };
 
 export const STORAGE_KEY = {
