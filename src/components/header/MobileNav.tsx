@@ -1,3 +1,5 @@
+'use client';
+
 import { PATH_NAME, TAB_NAME } from '@/utils/constants';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -31,8 +33,8 @@ export const MobileNav = () => {
         className={`flex flex-col justify-center absolute top-14 right-0 border shadow rounded-2xl p-2 cursor-pointer
           ${theme.value === THEME.DARK ? 'bg-secondary border-third' : 'bg-white border-fourth'}  
         `}
-        onShow={() => setShowNav(true)}
-        onClose={() => setShowNav(false)}
+        onShow={() => { setShowNav(true); }}
+        onClose={() => { setShowNav(false); }}
         button={
           <div className={`flex h-fit px-4 py-2 items-center rounded-full cursor-pointer hover:bg-third
             ${showNav && 'bg-third'}
@@ -81,6 +83,6 @@ export const MobileNav = () => {
           {TAB_NAME.CONTACT}
         </li>
       </SmoothUl>
-    </nav>
+    </nav >
   );
 };

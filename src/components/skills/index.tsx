@@ -36,12 +36,14 @@ export const SkillsPage = () => {
             STATIC_URLS.REACT,
             STATIC_URLS.TAILWIND,
             STATIC_URLS.MOBX,
+            STATIC_URLS.REDUX,
           ]}
           techNames={[
             'NextJs',
             'ReactJs',
             'TailwindCSS',
-            'MobX'
+            'MobX',
+            'Redux'
           ]}
         />
         <SkillsCard

@@ -1,3 +1,5 @@
+'use client';
+
 import { STATIC_URLS } from '@/utils/constants';
 import { Button } from '../general/Button';
 import Image from 'next/image';
@@ -11,6 +13,10 @@ export const handleContact = () => {
 };
 
 export const HomePage = () => {
+  const handleOpenCV = () => {
+    window.open(STATIC_URLS.CV);
+  };
+
   return (
     <div className={'h-full w-full flex flex-col sm:flex-wrap sm:flex-row'}>
       <div
@@ -53,10 +59,13 @@ export const HomePage = () => {
         <div className='flex space-x-2'>
           <Button
             name={'My CV'}
-            action={() => window.open(STATIC_URLS.CV)}
+            action={handleOpenCV}
             primary
           />
-          <Button name={'Contact me'} action={handleContact} />
+          <Button
+            name={'Contact me'}
+            action={handleContact}
+          />
         </div>
       </div>
 

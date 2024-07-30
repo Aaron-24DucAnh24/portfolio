@@ -1,3 +1,5 @@
+'use client';
+
 import { MODE, STORAGE_KEY } from '@/utils/constants';
 import { THEME } from '@/utils/enums';
 import { useAppDispatch, useAppSelector, useRunOnce } from '@/utils/hooks';
@@ -113,7 +115,7 @@ export const ThemeSwitcher = () => {
       >
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => handleOnClickOption(MODE.SYSTEM)}
+          onClick={() => { handleOnClickOption(MODE.SYSTEM); }}
         >
           <SystemIcon color='#e60022' size={20} className='mr-2' />
           {MODE.SYSTEM}
@@ -121,7 +123,7 @@ export const ThemeSwitcher = () => {
         </li>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => handleOnClickOption(MODE.LIGHT)}
+          onClick={() => { handleOnClickOption(MODE.LIGHT); }}
         >
           <LightIcon color='#e60022' size={20} className='mr-2' />
           {MODE.LIGHT}
@@ -129,7 +131,7 @@ export const ThemeSwitcher = () => {
         </li>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => handleOnClickOption(MODE.DARK)}
+          onClick={() => { handleOnClickOption(MODE.DARK); }}
         >
           <DarkIcon color='#e60022' size={20} className='mr-2' />
           {MODE.DARK}
@@ -145,6 +147,6 @@ export const ThemeSwitcher = () => {
           `}
         />
       }
-    </div>
+    </div >
   );
 };

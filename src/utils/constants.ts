@@ -35,6 +35,7 @@ export const STATIC_URLS = {
   MSSQL: '/mssql.png',
   QUANG_TRUNG: '/quangtrung.png',
   CV: 'https://drive.google.com/drive/folders/1oJ4_Kta3MXeWfJUvFn2JWXPjX-oCK1Ci?usp=sharing',
+  REDUX: '/redux.png'
 };
 
 export const PATH_NAME = {

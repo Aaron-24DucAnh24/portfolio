@@ -1,3 +1,5 @@
+'use client';
+
 import { useClickOutside } from '@/utils/hooks';
 import {
   ReactNode,
