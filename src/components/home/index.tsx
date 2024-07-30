@@ -1,4 +1,3 @@
-'use client';
 import { STATIC_URLS } from '@/utils/constants';
 import { Button } from '../general/Button';
 import Image from 'next/image';
@@ -49,7 +48,7 @@ export const HomePage = () => {
           />
         </div>
         <div className='text:md sm:text-lg text-justify'>
-          {'I\'m passionate about continuous learning and committed to creating robust, user-friendly software solutions. I\'m excited to find an entry-level position where I can grow my skills and contribute to the success of a company.'}
+          {'I am a Bachelor of Computer Science and a passionate web developer specializing in .NET and ReactJS. With 6 months of experience, I\'m excited for an entry-level position where I can grow my skills and contribute to a company\'s success.'}
         </div>
         <div className='flex space-x-2'>
           <Button

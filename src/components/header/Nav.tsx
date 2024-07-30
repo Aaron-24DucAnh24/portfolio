@@ -1,17 +1,16 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { PATH_NAME, TAB_NAME } from '@/utils/constants';
-import { useStores } from '@/store';
 import { THEME } from '@/utils/enums';
 import { handleContact } from '../home';
+import { useAppSelector } from '@/utils/hooks';
 
 export const Nav = () => {
-  const { generalStore } = useStores();
-  const { theme } = generalStore;
-  const activeStyle = theme === THEME.LIGHT
+  const theme = useAppSelector(x => x.theme);
+  const pathName = usePathname();
+  const activeStyle = theme.value === THEME.LIGHT
     ? 'bg-secondary rounded-full text-fourth px-4 py-2'
     : 'bg-white rounded-full text-secondary px-4 py-2';
-  const pathName = usePathname();
 
   return (
     <nav className="h-full hidden md:flex ml-auto">

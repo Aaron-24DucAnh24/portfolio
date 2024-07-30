@@ -1,9 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import { ShrinkBorder } from '../general/ShrinkBorder';
 import { THEME } from '@/utils/enums';
-import { observer } from 'mobx-react-lite';
-import { useStores } from '@/store';
+import { useAppSelector } from '@/utils/hooks';
 
 interface IExperienceCard {
   name: string,
@@ -14,10 +15,10 @@ interface IExperienceCard {
   className: string,
 }
 
-export const ExperienceCard = observer((props: IExperienceCard) => {
+export const ExperienceCard = (props: IExperienceCard) => {
   const { name, image, position, time, desc, className } = props;
+  const theme = useAppSelector(x => x.theme);
   const [isHover, setIsHover] = useState<boolean>(false);
-  const { generalStore } = useStores();
 
   return (
     <div className='w-full md:w-1/2 px-4 sm:pb-8'>
@@ -25,7 +26,7 @@ export const ExperienceCard = observer((props: IExperienceCard) => {
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         className={`flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-2xl border relative
-          ${generalStore.theme === THEME.DARK && 'bg-fifth border-third'}
+          ${theme.value === THEME.DARK && 'bg-fifth border-third'}
         `}
       >
         <div className='relative w-full h-36 flex justify-center items-center text-fourth font-medium'>
@@ -54,4 +55,4 @@ export const ExperienceCard = observer((props: IExperienceCard) => {
       </div>
     </div>
   );
-});
+};

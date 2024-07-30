@@ -1,29 +1,14 @@
-import { createContext, useContext } from 'react';
-import { makeAutoObservable } from 'mobx';
-import { THEME } from '@/utils/enums';
-import { MODE } from '@/utils/constants';
+import { configureStore } from '@reduxjs/toolkit';
+import { themeReducer } from './themeSlide';
+import { modeReducer } from './modeSlide';
 
-export class GeneralStore {
-  mode: string = MODE.SYSTEM;
-  theme: THEME = THEME.LIGHT;
-
-  constructor() {
-    makeAutoObservable(this);
+const store = configureStore({
+  reducer: {
+    theme: themeReducer,
+    mode: modeReducer,
   }
+});
 
-  setSystemMode(systemMode: string) {
-    this.mode = systemMode;
-  }
-
-  setTheme(theme: THEME) {
-    this.theme = theme;
-  }
-}
-
-const generalStore = new GeneralStore();
-
-const stores = {
-  generalStore
-};
-
-export const useStores = () => useContext(createContext(stores));
+export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

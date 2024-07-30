@@ -1,8 +1,6 @@
-import { useStores } from '@/store';
 import { MODE, STORAGE_KEY } from '@/utils/constants';
 import { THEME } from '@/utils/enums';
-import { useRunOnce } from '@/utils/hooks';
-import { observer } from 'mobx-react-lite';
+import { useAppDispatch, useAppSelector, useRunOnce } from '@/utils/hooks';
 import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa6';
 import {
@@ -11,27 +9,33 @@ import {
   MdOutlineDesktopMac as SystemIcon,
 } from 'react-icons/md';
 import { SmoothUl } from '../general/SmoothUl';
+import { setTheme } from '@/store/themeSlide';
+import { setMode } from '@/store/modeSlide';
 
-export const ThemeSwitcher = observer(() => {
-  const { generalStore } = useStores();
+export const ThemeSwitcher = () => {
+  const theme = useAppSelector(x => x.theme);
+  const mode = useAppSelector(x => x.mode);
+  const dispatch = useAppDispatch();
+
+
   const [showCover, setShowCover] = useState(false);
   const [coverHidden, setCoverHidden] = useState(true);
-  const [mode, setMode] = useState(generalStore.mode);
+  const [currentMode, setCurrentMode] = useState(mode.value);
 
   // HANDLERS
   const handleSysemTheme = (e: MediaQueryListEvent) => {
-    e.matches && generalStore.mode === MODE.SYSTEM && generalStore.setTheme(THEME.DARK);
-    !e.matches && generalStore.mode === MODE.SYSTEM && generalStore.setTheme(THEME.LIGHT);
+    e.matches && mode.value === MODE.SYSTEM && dispatch(setTheme(THEME.DARK));
+    !e.matches && mode.value === MODE.SYSTEM && dispatch(setTheme(THEME.LIGHT));
   };
 
-  const handleOnClickOption = (mode: string) => {
-    setMode(mode);
+  const handleOnClickOption = (currentMode: string) => {
+    setCurrentMode(currentMode);
     setShowCover(true);
   };
 
   const handleOnAnimatedEnd = () => {
     if (coverHidden) {
-      generalStore.setSystemMode(mode);
+      dispatch(setMode(currentMode));
       setCoverHidden(false);
     }
     else {
@@ -41,16 +45,16 @@ export const ThemeSwitcher = observer(() => {
   };
 
   // EFFECTS
-  // Preseting mode
+  // Preseting currentMode
   useRunOnce(() => {
-    const mode = localStorage.getItem(STORAGE_KEY.MODE);
-    if (!mode) localStorage.setItem(STORAGE_KEY.MODE, generalStore.mode);
-    else generalStore.setSystemMode(mode);
+    const currentMode = localStorage.getItem(STORAGE_KEY.MODE);
+    if (!currentMode) localStorage.setItem(STORAGE_KEY.MODE, mode.value);
+    dispatch(setMode(currentMode));
   });
 
   // Preseting body bg
   useEffect(() => {
-    if (generalStore.theme === THEME.LIGHT) {
+    if (theme.value === THEME.LIGHT) {
       document.body.classList.add('bg-white');
       document.body.classList.remove('bg-secondary');
     }
@@ -58,27 +62,27 @@ export const ThemeSwitcher = observer(() => {
       document.body.classList.remove('bg-white');
       document.body.classList.add('bg-secondary');
     }
-  }, [generalStore.theme]);
+  }, [theme.value]);
 
-  // Handling change mode
+  // Handling change currentMode
   useEffect(() => {
-    switch (generalStore.mode) {
+    switch (mode.value) {
       case MODE.DARK:
-        generalStore.setTheme(THEME.DARK);
+        dispatch(setTheme(THEME.DARK));
         localStorage.setItem(STORAGE_KEY.MODE, MODE.DARK);
         break;
 
       case MODE.LIGHT:
-        generalStore.setTheme(THEME.LIGHT);
+        dispatch(setTheme(THEME.LIGHT));
         localStorage.setItem(STORAGE_KEY.MODE, MODE.LIGHT);
         break;
 
       default:
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          generalStore.setTheme(THEME.DARK);
+          dispatch(setTheme(THEME.DARK));
         }
         else {
-          generalStore.setTheme(THEME.LIGHT);
+          dispatch(setTheme(THEME.LIGHT));
         }
         window
           .matchMedia('(prefers-color-scheme: dark)')
@@ -92,18 +96,18 @@ export const ThemeSwitcher = observer(() => {
         .matchMedia('(prefers-color-scheme: dark)')
         .removeEventListener('change', handleSysemTheme);
     };
-  }, [generalStore.mode]);
+  }, [mode.value]);
 
   return (
     <div className={'h-full ml-2 md:ml-8 flex items-center relative'}>
       <SmoothUl
         className={`flex flex-col justify-center absolute top-14 right-0 border shadow rounded-2xl p-2 cursor-pointer
-          ${generalStore.theme === THEME.DARK ? 'bg-secondary border-third' : 'bg-white border-fourth'}
+          ${theme.value === THEME.DARK ? 'bg-secondary border-third' : 'bg-white border-fourth'}
         `}
         button={
           <div className='h-fit hover:bg-fourth cursor-pointer p-2 rounded-2xl'>
-            {generalStore.theme === THEME.DARK && <DarkIcon color='#e60022' size={30} />}
-            {generalStore.theme === THEME.LIGHT && <LightIcon color='#e60022' size={30} />}
+            {theme.value === THEME.DARK && <DarkIcon color='#e60022' size={30} />}
+            {theme.value === THEME.LIGHT && <LightIcon color='#e60022' size={30} />}
           </div>
         }
       >
@@ -113,7 +117,7 @@ export const ThemeSwitcher = observer(() => {
         >
           <SystemIcon color='#e60022' size={20} className='mr-2' />
           {MODE.SYSTEM}
-          {generalStore.mode === MODE.SYSTEM && <FaCheck className='ml-auto' color='#e60022' />}
+          {mode.value === MODE.SYSTEM && <FaCheck className='ml-auto' color='#e60022' />}
         </li>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
@@ -121,7 +125,7 @@ export const ThemeSwitcher = observer(() => {
         >
           <LightIcon color='#e60022' size={20} className='mr-2' />
           {MODE.LIGHT}
-          {generalStore.mode === MODE.LIGHT && <FaCheck className='ml-auto' color='#e60022' />}
+          {mode.value === MODE.LIGHT && <FaCheck className='ml-auto' color='#e60022' />}
         </li>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
@@ -129,7 +133,7 @@ export const ThemeSwitcher = observer(() => {
         >
           <DarkIcon color='#e60022' size={20} className='mr-2' />
           {MODE.DARK}
-          {generalStore.mode === MODE.DARK && <FaCheck className='ml-auto' color='#e60022' />}
+          {mode.value === MODE.DARK && <FaCheck className='ml-auto' color='#e60022' />}
         </li>
       </SmoothUl>
       {
@@ -143,4 +147,4 @@ export const ThemeSwitcher = observer(() => {
       }
     </div>
   );
-});
+};

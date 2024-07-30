@@ -1,16 +1,17 @@
 'use client';
-import { useStores } from '@/store';
+
 import { THEME } from '@/utils/enums';
+import { useAppSelector } from '@/utils/hooks';
 import { useEffect, useState } from 'react';
 
 export const ShrinkBorder = ({ isHover }: { isHover: boolean }) => {
-  const { generalStore } = useStores();
+  const theme = useAppSelector(x => x.theme);
   const [className, setClassName] = useState('');
 
   useEffect(() => {
-    generalStore.theme === THEME.DARK && setClassName('border-third w-3/4');
-    generalStore.theme === THEME.LIGHT && setClassName('border-fourth w-3/4');
-  }, [generalStore.theme]);
+    theme.value === THEME.DARK && setClassName('border-third w-3/4');
+    theme.value === THEME.LIGHT && setClassName('border-fourth w-3/4');
+  }, [theme.value]);
 
   return (
     <hr className={`border-2 duration-1000 bottom-0 absolute

@@ -5,13 +5,14 @@ import { useEffect, useState } from 'react';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa6';
 import { FaCheck } from 'react-icons/fa';
 import { SmoothUl } from '../general/SmoothUl';
-import { useStores } from '@/store';
 import { THEME } from '@/utils/enums';
 import { handleContact } from '../home';
+import { useAppSelector } from '@/utils/hooks';
 
 export const MobileNav = () => {
   const pathName = usePathname();
-  const { generalStore } = useStores();
+  const theme = useAppSelector(x => x.theme);
+
 
   // STATES
   const [currTab, setCurrTab] = useState<string>(TAB_NAME.HOME);
@@ -28,14 +29,14 @@ export const MobileNav = () => {
     <nav className="h-full flex items-center md:hidden ml-auto font-medium relative">
       <SmoothUl
         className={`flex flex-col justify-center absolute top-14 right-0 border shadow rounded-2xl p-2 cursor-pointer
-          ${generalStore.theme === THEME.DARK ? 'bg-secondary border-third' : 'bg-white border-fourth'}  
+          ${theme.value === THEME.DARK ? 'bg-secondary border-third' : 'bg-white border-fourth'}  
         `}
         onShow={() => setShowNav(true)}
         onClose={() => setShowNav(false)}
         button={
           <div className={`flex h-fit px-4 py-2 items-center rounded-full cursor-pointer hover:bg-third
             ${showNav && 'bg-third'}
-            ${generalStore.theme === THEME.DARK ? 'text-fourth' : 'text-secondary'}
+            ${theme.value === THEME.DARK ? 'text-fourth' : 'text-secondary'}
           `}>
             {currTab}
             {!showNav && <FaAngleDown className='ml-1' />}

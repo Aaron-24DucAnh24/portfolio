@@ -1,11 +1,10 @@
 'use client';
 
-import { useStores } from '@/store';
 import { THEME } from '@/utils/enums';
-import { observer } from 'mobx-react-lite';
+import { useAppSelector } from '@/utils/hooks';
 
-export const NPFullstackDesc = observer(() => {
-  const { generalStore } = useStores();
+export const NPFullstackDesc = () => {
+  const theme = useAppSelector(x => x.theme);
 
   return (
     <ul className={'leading-6 space-y-2 text-sm text-third '}>
@@ -13,7 +12,7 @@ export const NPFullstackDesc = observer(() => {
         <p>{'Worked on the '}
           <i
             className={`cursor-pointer text-black underline
-              ${generalStore.theme === THEME.DARK ? 'text-fourth' : 'text-fifth'}
+              ${theme.value === THEME.DARK ? 'text-fourth' : 'text-fifth'}
             `}
             onClick={() => window.open('https://institute.debeers.com/en-gb/education')}
           >
@@ -28,4 +27,4 @@ export const NPFullstackDesc = observer(() => {
       <li className="dotted-li">Communicated with customers to complete and modify different features.</li>
     </ul>
   );
-});
+};

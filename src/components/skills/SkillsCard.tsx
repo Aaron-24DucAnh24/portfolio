@@ -4,8 +4,7 @@ import { useState } from 'react';
 import { ShrinkBorder } from '../general/ShrinkBorder';
 import Image from 'next/image';
 import { THEME } from '@/utils/enums';
-import { useStores } from '@/store';
-import { observer } from 'mobx-react-lite';
+import { useAppSelector } from '@/utils/hooks';
 
 interface ISkillsCard {
   name: string,
@@ -14,10 +13,10 @@ interface ISkillsCard {
   techNames: string[],
 }
 
-export const SkillsCard = observer((props: ISkillsCard) => {
+export const SkillsCard = (props: ISkillsCard) => {
   const { name, image, items, techNames } = props;
   const [isHover, setIsHover] = useState<boolean>(false);
-  const { generalStore } = useStores();
+  const theme = useAppSelector(x => x.theme);
 
   return (
     <div className='w-full md:w-1/2 px-4 sm:pb-8'>
@@ -25,7 +24,7 @@ export const SkillsCard = observer((props: ISkillsCard) => {
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         className={`rounded-lg overflow-hidden shadow-md hover:shadow-2xl border relative
-          ${generalStore.theme === THEME.DARK && 'bg-fifth border-third'}
+          ${theme.value === THEME.DARK && 'bg-fifth border-third'}
         `}
       >
         <div className={'flex flex-col p-2 items-center space-y-2'}>
@@ -60,4 +59,4 @@ export const SkillsCard = observer((props: ISkillsCard) => {
       </div>
     </div>
   );
-});
+};

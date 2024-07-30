@@ -1,11 +1,8 @@
-'use client';
-
 import { PiGearBold } from 'react-icons/pi';
 import { SkillsCard } from './SkillsCard';
 import { STATIC_URLS } from '@/utils/constants';
-import { observer } from 'mobx-react-lite';
 
-export const SkillsPage = observer(() => {
+export const SkillsPage = () => {
   return (
     <div className={'max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col'}>
       <h1 className='pb-2 sm:pb-12 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
@@ -84,4 +81,4 @@ export const SkillsPage = observer(() => {
       </div>
     </div>
   );
-});
+};

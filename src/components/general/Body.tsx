@@ -1,17 +1,16 @@
 'use client';
 
-import { useStores } from '@/store';
 import { THEME } from '@/utils/enums';
-import { observer } from 'mobx-react-lite';
 import { ReactNode } from 'react';
+import { StateProvider } from './StateProvider';
+import { useAppSelector } from '@/utils/hooks';
 
-export const Body = observer(({ children }: { children: ReactNode }) => {
-  const { generalStore } = useStores();
-  const { theme } = generalStore;
+export const Body = StateProvider((({ children }: { children: ReactNode }) => {
+  const { value } = useAppSelector(x => x.theme);
 
   return (
-    <div className={`animate-slide-in font-normal ${theme === THEME.DARK && 'text-fourth'}`}>
+    <div className={`animate-slide-in font-normal ${value === THEME.DARK && 'text-fourth'}`}>
       {children}
     </div>
   );
-});
+}));

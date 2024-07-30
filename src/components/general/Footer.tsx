@@ -11,16 +11,16 @@ import {
 import { IoMdMail } from 'react-icons/io';
 import { Logo } from './Logo';
 import { PATH_NAME, TAB_NAME } from '@/utils/constants';
-import { observer } from 'mobx-react-lite';
-import { useStores } from '@/store';
 import { THEME } from '@/utils/enums';
+import { useAppSelector } from '@/utils/hooks';
+import { StateProvider } from './StateProvider';
 
-export const Footer = observer(() => {
-  const { generalStore } = useStores();
+export const Footer = StateProvider(() => {
+  const theme = useAppSelector(x => x.theme);
 
   return (
     <footer className={`shadow-2xl p-4 border-t
-      ${generalStore.theme === THEME.DARK ? 'bg-secondary text-fourth border-third' : 'border-fourth'}
+      ${theme.value === THEME.DARK ? 'bg-secondary text-fourth border-third' : 'border-fourth'}
     `}>
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="md:flex md:items-center md:justify-between ">
