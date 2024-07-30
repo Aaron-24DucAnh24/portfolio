@@ -28,7 +28,7 @@ export const EducationCard = (props: IEducationCard) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <div className="p-4 sm:p-0 h-fit w-full flex flex-col sm:flex-row">
+      <div className="p-4 sm:p-0 sm:pr-2 h-fit w-full flex flex-col sm:flex-row items-center sm:items-start">
         <div className='relative mb-4 sm:mb-0 mr-0 sm:mr-12 w-72 h-32 sm:w-80 sm:h-40 overflow-hidden shadow-lg'>
           <Image
             className='object-cover'
@@ -38,7 +38,7 @@ export const EducationCard = (props: IEducationCard) => {
           />
         </div>
 
-        <div className='flex flex-col space-y-1 sm:space-y-2 justify-center'>
+        <div className='flex flex-col space-y-1 sm:space-y-2 justify-center items-center sm:items-start sm:my-4'>
           <div className='text-base md:text-lg uppercase font-semibold'>
             {orgName}
           </div>

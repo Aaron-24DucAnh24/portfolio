@@ -7,7 +7,7 @@ export const PetopiaDesc = () => {
         Includes a website for normal users and one for admins. Allows users to create and manage their pet profiles, adoption request, posts and blogs as well as providing dashboard for admins.
       </p>
       <p className='font-medium mt-4 mb-2'>
-        POSITION: <i className='font-light'>FULLSTACK DEVELOPER</i>
+        POSITION: <i className='font-light'>FULL STACK DEVELOPER</i>
       </p>
       <ul className='text-sm text-third space-y-1'>
         <li className='dotted-li'>Designed the UI using Figma, and design the database.</li>

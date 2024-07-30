@@ -10,14 +10,21 @@ export const ProjectsPage = () => {
         Personal Projects
         <AiOutlineProject color='#e60022' size={40} className='pl-2' />
       </h1>
-      <div>
+      <div className='space-y-4 mb-4'>
         <PersonalProjectCard
-          name={'Petopia - An online pet adoption platform'}
+          name={'Petopia - An online pet adoption platform (2024)'}
           type={'University Capstone project'}
-          techs={'NEXTJS, TAILWIND CSS, .NET CORE, EF CORE, MSSQL, REDIS, MOBX, CYPRESS'}
+          techs={'NEXTJS, TAILWINDCSS, .NET CORE, MSSQL, REDIS, MOBX, CYPRESS'}
           source={'https://github.com/Aaron-24DucAnh24/Petopia-Backend'}
           image={STATIC_URLS.PETOPIA}
           desc={<PetopiaDesc />}
+        />
+        <PersonalProjectCard
+          name={'Duc-anh Portfolio (2024)'}
+          type={'Personal page'}
+          techs={'NEXTJS, TAILWINDCSS, REDUX'}
+          source={'https://github.com/Aaron-24DucAnh24/Portfolio'}
+          image={STATIC_URLS.LOGO}
         />
       </div>
     </div>
