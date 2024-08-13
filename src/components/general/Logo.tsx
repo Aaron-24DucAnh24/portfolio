@@ -11,7 +11,9 @@ export const Logo = () => {
         height={40}
         className="-mr-1"
       />
-      <div>imducanh</div>
+      <div className='hidden sm:block'>
+        imducanh
+      </div>
     </a>
   );
 };

@@ -9,7 +9,7 @@ export const EducationPage = () => {
         Education and Certificates
         <HiOutlineBookOpen color='#e60022' size={40} className='pl-2' />
       </h1>
-      <div>
+      <div className='space-y-4'>
         <EducationCard
           image={STATIC_URLS.HCMUT}
           orgName={'hcm university of technology'}

@@ -20,7 +20,7 @@ export const HomePage = () => {
   return (
     <div className={'h-full w-full flex flex-col sm:flex-wrap sm:flex-row'}>
       <div
-        className='h-1/2 sm:h-full w-full sm:w-1/2 flex flex-col justify-center space-y-8 p-4'>
+        className='h-1/2 sm:h-full w-full sm:w-1/2 flex flex-col justify-center space-y-4 md:space-y-8 p-4'>
         <div className='text-xl md:text-3xl font-semibold flex items-center sm:tracking-tighter'>
           {'Hi there, I\'m Duc-anh Bui'}
           <Image

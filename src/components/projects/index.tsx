@@ -10,7 +10,7 @@ export const ProjectsPage = () => {
         Personal Projects
         <AiOutlineProject color='#e60022' size={40} className='pl-2' />
       </h1>
-      <div className='space-y-4 mb-4'>
+      <div className='space-y-4'>
         <PersonalProjectCard
           name={'Petopia - An online pet adoption platform (2024)'}
           type={'University Capstone project'}

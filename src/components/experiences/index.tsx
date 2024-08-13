@@ -11,7 +11,7 @@ export const ExperiencePage = () => {
         Working Experiences
         <AiOutlineProject color='#e60022' size={40} className='pl-2' />
       </h1>
-      <div className='flex flex-wrap justify-between items-start -mx-4 -mb-8 space-y-4 md:space-y-0'>
+      <div className='flex flex-wrap justify-between items-start -mx-4 sm:-mb-8 space-y-4 md:space-y-0'>
         <ExperienceCard
           name={'NETPOWER VIETNAM'}
           image={STATIC_URLS.NETPOWER}

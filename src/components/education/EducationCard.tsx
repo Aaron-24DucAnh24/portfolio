@@ -22,7 +22,7 @@ export const EducationCard = (props: IEducationCard) => {
 
   return (
     <div
-      className={`mb-4 shadow-md hover:shadow-2xl rounded-lg overflow-hidden border relative
+      className={`shadow-md hover:shadow-2xl rounded-lg overflow-hidden border relative
         ${theme.value === THEME.DARK && 'bg-fifth border-third'}
       `}
       onMouseEnter={() => setIsHover(true)}

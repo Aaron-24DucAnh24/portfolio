@@ -9,7 +9,7 @@ export const SkillsPage = () => {
         Technical Skills
         <PiGearBold color='#e60022' size={40} className='pl-2' />
       </h1>
-      <div className='flex flex-wrap justify-between items-start -mx-4 space-y-4 md:space-y-0'>
+      <div className='flex flex-wrap justify-between items-start -mx-4 sm:-mb-8 space-y-4 md:space-y-0'>
         <SkillsCard
           name={'Programming'}
           image={STATIC_URLS.PROGRAMMING}
