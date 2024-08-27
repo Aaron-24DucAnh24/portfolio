@@ -9,7 +9,7 @@ export const Body = StateProvider((({ children }: { children: ReactNode }) => {
   const { value } = useAppSelector(x => x.theme);
 
   return (
-    <div className={`animate-slide-in font-normal ${value === THEME.DARK && 'text-fourth'}`}>
+    <div className={`animate-slide-in ${value === THEME.DARK && 'text-fourth'}`}>
       {children}
     </div>
   );

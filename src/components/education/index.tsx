@@ -1,14 +1,14 @@
 import { STATIC_URLS } from '@/utils/constants';
 import { EducationCard } from './EducationCard';
-import { HiOutlineBookOpen } from 'react-icons/hi';
+import { GrCertificate } from 'react-icons/gr';
 
 export const EducationPage = () => {
   return (
     <div className={'max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col'}>
       <h1 className='pb-2 sm:pb-12 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
-        Education and Certificates
-        <HiOutlineBookOpen color='#e60022' size={40} className='pl-2' />
+        Education and Certificates <GrCertificate color='#e60022' size={40} className='pl-2' />
       </h1>
+
       <div className='space-y-4'>
         <EducationCard
           image={STATIC_URLS.HCMUT}
@@ -19,20 +19,25 @@ export const EducationPage = () => {
           to={'2024'}
         />
         <EducationCard
+          image={STATIC_URLS.QUANG_TRUNG}
+          orgName={'Quang-trung gifted high school'}
+          degreeName={'Specialized Chemistry Student'}
+          score={'2020 National High School Graduation Exam - Grade 29.35'}
+          from={'2017'}
+          to={'2020'}
+        />
+      </div>
+
+      <div className='my-4 sm:my-8 border shadow-sm mx-12' />
+
+      <div className='space-y-4'>
+        <EducationCard
           image={STATIC_URLS.IDP}
           orgName={'IDP education Vietnam'}
           degreeName={'IELTS'}
           score={'Band 6.0'}
           from={'2022'}
           to={'2024'}
-        />
-        <EducationCard
-          image={STATIC_URLS.QUANG_TRUNG}
-          orgName={'Quang-trung gifted high school'}
-          degreeName={'Specialized Chemistry Student'}
-          score={'Excellent'}
-          from={'2017'}
-          to={'2020'}
         />
       </div>
     </div>

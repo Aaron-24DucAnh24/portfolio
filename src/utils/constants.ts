@@ -6,7 +6,7 @@ export const STATIC_URLS = {
   '22': '/22.jpg',
   CLOUD: '/cloud.png',
   IDP: '/idp.png',
-  HCMUT: '/hcmut.jpg',
+  HCMUT: '/hcmut.png',
   PETOPIA: '/petopia.png',
   NETPOWER: '/netpower.png',
   PROGRAMMING: '/programming.png',
@@ -33,7 +33,7 @@ export const STATIC_URLS = {
   REDIS: '/redis.jpeg',
   MYSQL: '/mysql.png',
   MSSQL: '/mssql.png',
-  QUANG_TRUNG: '/quangtrung.png',
+  QUANG_TRUNG: '/quangtrung.jpeg',
   CV: 'https://drive.google.com/drive/folders/1oJ4_Kta3MXeWfJUvFn2JWXPjX-oCK1Ci?usp=sharing',
   REDUX: '/redux.png'
 };

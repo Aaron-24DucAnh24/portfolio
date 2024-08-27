@@ -16,21 +16,21 @@ export const Nav = () => {
 
   return (
     <nav className="h-full hidden md:flex ml-auto">
-      <ul className="flex text-base font-medium h-full items-center">
-        <li className={`items-center flex  ${pathName == PATH_NAME.EXPERIENCES && activeStyle} ml-8`}>
+      <ul className="flex text-base font-medium h-full items-center space-x-6">
+        <li className={`items-center flex  ${pathName == PATH_NAME.EXPERIENCES && activeStyle}`}>
           <Link href={PATH_NAME.EXPERIENCES}>{TAB_NAME.EXPERIENCES}</Link>
         </li>
-        <li className={`items-center flex  ${pathName == PATH_NAME.PROJECTS && activeStyle} ml-8`}>
+        <li className={`items-center flex  ${pathName == PATH_NAME.PROJECTS && activeStyle}`}>
           <Link href={PATH_NAME.PROJECTS}>{TAB_NAME.PROJECTS}</Link>
         </li>
-        <li className={`flex items-center  ${pathName == PATH_NAME.EDUCATION && activeStyle} ml-8`}>
+        <li className={`flex items-center  ${pathName == PATH_NAME.EDUCATION && activeStyle}`}>
           <Link href={PATH_NAME.EDUCATION}>{TAB_NAME.EDUCATION}</Link>
         </li>
-        <li className={`items-center flex  ${pathName == PATH_NAME.SKILLS && activeStyle} ml-8`}>
+        <li className={`items-center flex  ${pathName == PATH_NAME.SKILLS && activeStyle}`}>
           <Link href={PATH_NAME.SKILLS}>{TAB_NAME.SKILLS}</Link>
         </li>
         <li
-          className={'items-center flex ml-8 cursor-pointer'}
+          className={'items-center flex cursor-pointer'}
           onClick={handleContact}
         >
           {TAB_NAME.CONTACT}

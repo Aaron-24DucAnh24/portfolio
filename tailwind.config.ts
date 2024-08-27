@@ -18,7 +18,6 @@ const config: Config = {
     },
     fontFamily: {
       special: ['Pacifico', 'cursive'],
-      normal: ['Finlandica', 'sans-serif'],
     },
     keyframes: {
       shake: {

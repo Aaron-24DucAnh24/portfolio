@@ -28,8 +28,8 @@ export const EducationCard = (props: IEducationCard) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <div className="p-4 sm:p-0 sm:pr-2 h-fit w-full flex flex-col sm:flex-row items-center sm:items-start">
-        <div className='relative mb-4 sm:mb-0 mr-0 sm:mr-12 w-72 h-32 sm:w-80 sm:h-40 overflow-hidden shadow-lg'>
+      <div className="px-4 py-4 w-full flex flex-col sm:flex-row items-center space-y-4 sm:space-x-4 sm:space-y-0">
+        <div className='relative w-32 h-32 overflow-hidden shadow-lg rounded-full border'>
           <Image
             className='object-cover'
             src={image}
@@ -38,17 +38,17 @@ export const EducationCard = (props: IEducationCard) => {
           />
         </div>
 
-        <div className='flex flex-col space-y-1 sm:space-y-2 justify-center items-center sm:items-start sm:my-4'>
-          <div className='text-base md:text-lg uppercase font-semibold'>
+        <div className='flex flex-col space-y-1 justify-center items-center sm:items-start text-center'>
+          <div className='text-base uppercase font-semibold'>
             {orgName}
           </div>
-          <div className='uppercase text-sm md:text-base'>
+          <div className='uppercase text-base'>
             {degreeName}
           </div>
-          <div className='text-primary text-sm md:text-base font-semibold'>
+          <div className='text-primary text-base font-semibold'>
             {score}
           </div>
-          <div className='italic text-third text-sm md:text-base'>
+          <div className='italic text-third text-base'>
             {`From ${from} to ${to}`}
           </div>
         </div>

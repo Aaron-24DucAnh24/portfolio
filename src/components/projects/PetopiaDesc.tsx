@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const PetopiaDesc = () => {
   return (
-    <div className="h-fit px-4 pb-4 sm:py-4 sm:px-8 text-justify">
+    <div className="h-fit mt-4 text-justify">
       <p className='text-third text-sm'>
         Includes a website for normal users and one for admins. Allows users to create and manage their pet profiles, adoption request, posts and blogs as well as providing dashboard for admins.
       </p>
