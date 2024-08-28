@@ -38,7 +38,7 @@ export const EducationCard = (props: IEducationCard) => {
           />
         </div>
 
-        <div className='flex flex-col space-y-1 justify-center items-center sm:items-start text-center'>
+        <div className='flex flex-col space-y-1 justify-center items-center sm:items-start text-center sm:text-start'>
           <div className='text-base uppercase font-semibold'>
             {orgName}
           </div>
