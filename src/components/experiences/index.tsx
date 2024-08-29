@@ -19,14 +19,18 @@ export const ExperiencePage = () => {
           time={'August 2023 - December 2023'}
           className='bg-[#11b9e8]'
           desc={<NPFullstackDesc />}
+          duration={5}
+          companyUrl={'https://www.netpower.vn'}
         />
         <ExperienceCard
           name={'NETPOWER VIETNAM'}
           image={STATIC_URLS.NETPOWER}
           position={'Software Engineer Intern'}
-          time={'June 2023 - August 2023'}
+          time={'June 2023 - July 2023'}
           className='bg-[#11b9e8]'
           desc={<NPInternDesc />}
+          duration={2}
+          companyUrl={'https://www.netpower.vn'}
         />
       </div>
     </div>

@@ -65,3 +65,11 @@ export const MODE = {
   LIGHT: 'Light',
   SYSTEM: 'System',
 };
+
+export const SOCIAL_LINKS = {
+  FACEBOOK: 'https://www.facebook.com/ngocducanh.bui',
+  GITHUB: 'https://github.com/Aaron-24DucAnh24',
+  EMAIL: 'mailto:buingocducanh24@gmail.com',
+  PHONE: 'tel:+84964778339',
+  LINKEDIN: 'https://www.linkedin.com/in/duc-anh-bui-2143b7275/',
+};
