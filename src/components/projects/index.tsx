@@ -2,6 +2,13 @@ import { AiOutlineProject } from 'react-icons/ai';
 import { STATIC_URLS } from '@/utils/constants';
 import { PersonalProjectCard } from './PersonalProjectCard';
 import { PetopiaDesc } from './PetopiaDesc';
+import projectsData from '@/data/projectData.json';
+
+const descComponents = {
+  PetopiaDesc,
+};
+
+type DescComponentKey = keyof typeof descComponents;
 
 export const ProjectsPage = () => {
   return (
@@ -11,21 +18,17 @@ export const ProjectsPage = () => {
         <AiOutlineProject color='#e60022' size={40} className='pl-2' />
       </h1>
       <div className='space-y-4'>
-        <PersonalProjectCard
-          name={'Petopia - An online pet adoption platform (2024)'}
-          type={'University Capstone project'}
-          techs={'NEXTJS, TAILWINDCSS, .NET CORE, MSSQL, REDIS, MOBX, CYPRESS'}
-          source={'https://github.com/Aaron-24DucAnh24/Petopia-Backend'}
-          image={STATIC_URLS.PETOPIA}
-          desc={<PetopiaDesc />}
-        />
-        <PersonalProjectCard
-          name={'Duc-anh Portfolio (2024)'}
-          type={'Personal page'}
-          techs={'NEXTJS, TAILWINDCSS, REDUX'}
-          source={'https://github.com/Aaron-24DucAnh24/Portfolio'}
-          image={STATIC_URLS.LOGO}
-        />
+        {projectsData.map((project, index) => (
+          <PersonalProjectCard
+            key={index}
+            name={project.name}
+            type={project.type}
+            techs={project.techs}
+            source={project.source}
+            image={STATIC_URLS[project.image as keyof typeof STATIC_URLS]}
+            desc={project.descComponent ? descComponents[project.descComponent as DescComponentKey]() : undefined}
+          />
+        ))}
       </div>
     </div>
   );

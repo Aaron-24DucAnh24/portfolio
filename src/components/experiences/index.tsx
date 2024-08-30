@@ -1,8 +1,15 @@
 import { AiOutlineProject } from 'react-icons/ai';
-import { STATIC_URLS } from '@/utils/constants';
 import { ExperienceCard } from './ExperienceCard';
 import { NPInternDesc } from './NPInternDesc';
 import { NPFullstackDesc } from './NPFullstackDesc';
+import experiencesData from '@/data/experienceData.json';
+
+type DescComponentKey = keyof typeof descComponents;
+
+const descComponents = {
+  NPFullstackDesc,
+  NPInternDesc,
+};
 
 export const ExperiencePage = () => {
   return (
@@ -12,26 +19,19 @@ export const ExperiencePage = () => {
         <AiOutlineProject color='#e60022' size={40} className='pl-2' />
       </h1>
       <div className='flex flex-wrap justify-between items-start -mx-4 sm:-mb-8 space-y-4 md:space-y-0'>
-        <ExperienceCard
-          name={'NETPOWER VIETNAM'}
-          image={STATIC_URLS.NETPOWER}
-          position={'Fullstack Developer'}
-          time={'August 2023 - December 2023'}
-          className='bg-[#11b9e8]'
-          desc={<NPFullstackDesc />}
-          duration={5}
-          companyUrl={'https://www.netpower.vn'}
-        />
-        <ExperienceCard
-          name={'NETPOWER VIETNAM'}
-          image={STATIC_URLS.NETPOWER}
-          position={'Software Engineer Intern'}
-          time={'June 2023 - July 2023'}
-          className='bg-[#11b9e8]'
-          desc={<NPInternDesc />}
-          duration={2}
-          companyUrl={'https://www.netpower.vn'}
-        />
+        {experiencesData.map((experience, index) => (
+          <ExperienceCard
+            key={index}
+            name={experience.name}
+            image={experience.image}
+            position={experience.position}
+            from={new Date(experience.from)}
+            to={experience.to ? new Date(experience.to) : null}
+            className={experience.className}
+            desc={descComponents[experience.descComponent as DescComponentKey]()}
+            companyUrl={experience.companyUrl}
+          />
+        ))}
       </div>
     </div>
   );

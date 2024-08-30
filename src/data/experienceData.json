@@ -1,0 +1,22 @@
+[
+  {
+    "name": "NETPOWER VIETNAM",
+    "image": "/image/netpower.png",
+    "position": "Fullstack Developer",
+    "from": "2023-08-01",
+    "to": "2023-12-31",
+    "className": "bg-[#11b9e8]",
+    "descComponent": "NPFullstackDesc",
+    "companyUrl": "https://www.netpower.vn"
+  },
+  {
+    "name": "NETPOWER VIETNAM",
+    "image": "/image/netpower.png",
+    "position": "Software Engineer Intern",
+    "from": "2023-06-01",
+    "to": "2023-07-31",
+    "className": "bg-[#11b9e8]",
+    "descComponent": "NPInternDesc",
+    "companyUrl": "https://www.netpower.vn"
+  }
+]

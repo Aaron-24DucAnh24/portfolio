@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Petopia - An online pet adoption platform (2024)",
+    "type": "University Capstone project",
+    "techs": "NEXTJS, TAILWINDCSS, .NET CORE, MSSQL, REDIS, MOBX, CYPRESS",
+    "source": "https://github.com/Aaron-24DucAnh24/Petopia-Backend",
+    "image": "PETOPIA",
+    "descComponent": "PetopiaDesc"
+  },
+  {
+    "name": "Duc-anh Portfolio (2024)",
+    "type": "Personal page",
+    "techs": "NEXTJS, TAILWINDCSS, REDUX",
+    "source": "https://github.com/Aaron-24DucAnh24/Portfolio",
+    "image": "LOGO"
+  }
+]

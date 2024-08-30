@@ -6,21 +6,25 @@ import { useState } from 'react';
 import { ShrinkBorder } from '../general/ShrinkBorder';
 import { THEME } from '@/utils/enums';
 import { useAppSelector } from '@/utils/hooks';
+import { formatDateRange, calculateDuration } from '@/utils/dateUtils';
 
 interface IExperienceCard {
   name: string;
   image: string;
   position: string;
-  time: string;
+  from: Date;
+  to: Date | null;
   desc: JSX.Element;
   className: string;
-  duration: number;
   companyUrl: string;
 }
 
-export const ExperienceCard = ({ name, image, position, time, desc, className, duration, companyUrl }: IExperienceCard) => {
+export const ExperienceCard = ({ name, image, position, from, to, desc, className, companyUrl }: IExperienceCard) => {
   const [isHover, setIsHover] = useState(false);
   const isDarkTheme = useAppSelector(x => x.theme.value === THEME.DARK);
+
+  const dateRange = formatDateRange(from, to);
+  const duration = calculateDuration(from, to);
 
   return (
     <div className='w-full md:w-1/2 px-4 sm:pb-8'>
@@ -51,9 +55,9 @@ export const ExperienceCard = ({ name, image, position, time, desc, className, d
             {position}
           </div>
           <div className='italic font-light text-sm tracking-tighter flex items-center flex-col space-y-3 sm:flex-row sm:space-y-0'>
-            <span>{time}</span>
+            <span>{dateRange}</span>
             <span className='ml-2 px-2 py-1 bg-primary text-fourth rounded-full'>
-              {`${duration} ${duration === 1 ? 'month' : 'months'}`}
+              {duration}
             </span>
           </div>
           {desc}

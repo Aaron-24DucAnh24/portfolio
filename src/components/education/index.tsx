@@ -1,10 +1,11 @@
 'use client';
 
-import { STATIC_URLS } from '@/utils/constants';
 import { EducationCard } from './EducationCard';
 import { GrCertificate } from 'react-icons/gr';
 import { useAppSelector } from '@/utils/hooks';
 import { THEME } from '@/utils/enums';
+import educationData from '@/data/educationData.json';
+import certificationData from '@/data/certificationData.json';
 
 export const EducationPage = () => {
   const { value } = useAppSelector(x => x.theme);
@@ -16,22 +17,17 @@ export const EducationPage = () => {
       </h1>
 
       <div className='space-y-4'>
-        <EducationCard
-          image={STATIC_URLS.HCMUT}
-          orgName={'hcm university of technology'}
-          degreeName={'bachelor of computer science'}
-          score={'GPA: 3.1'}
-          from={'2020'}
-          to={'2024'}
-        />
-        <EducationCard
-          image={STATIC_URLS.QUANG_TRUNG}
-          orgName={'Quang-trung gifted high school'}
-          degreeName={'Specialized Chemistry Student'}
-          score={'National High School Graduation Exam Top Score - 29.35'}
-          from={'2017'}
-          to={'2020'}
-        />
+        {educationData.map((edu, index) => (
+          <EducationCard
+            key={index}
+            image={edu.image}
+            orgName={edu.orgName}
+            degreeName={edu.degreeName}
+            score={edu.score}
+            from={edu.from}
+            to={edu.to}
+          />
+        ))}
       </div>
 
       <div className={`
@@ -40,14 +36,17 @@ export const EducationPage = () => {
       } />
 
       <div className='space-y-4'>
-        <EducationCard
-          image={STATIC_URLS.IDP}
-          orgName={'IDP education Vietnam'}
-          degreeName={'IELTS'}
-          score={'Band 6.0'}
-          from={'2022'}
-          to={'2024'}
-        />
+        {certificationData.map((edu, index) => (
+          <EducationCard
+            key={index}
+            image={edu.image}
+            orgName={edu.orgName}
+            degreeName={edu.degreeName}
+            score={edu.score}
+            from={edu.from}
+            to={edu.to}
+          />
+        ))}
       </div>
     </div>
   );
