@@ -8,10 +8,12 @@ This project is built using the following technologies:
 - **React**: A JavaScript library for building user interfaces.
 - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 - **Redux Toolkit**: The official, opinionated, batteries-included toolset for efficient Redux development.
+- **React Redux**: Official React bindings for Redux.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom user interfaces.
 - **Material Tailwind**: A components library for Tailwind CSS and Material Design.
 - **React Icons**: A collection of popular icons for React projects.
 - **React Type Animation**: A React component for adding typing animations.
+- **Color Thief React**: A React component for grabbing the color palette from an image.
 
 ## Run the project
 

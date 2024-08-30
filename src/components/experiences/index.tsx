@@ -7,8 +7,8 @@ import experiencesData from '@/data/experienceData.json';
 type DescComponentKey = keyof typeof descComponents;
 
 const descComponents = {
-  NPFullstackDesc,
-  NPInternDesc,
+  NPFullstackDesc: <NPFullstackDesc />,
+  NPInternDesc: <NPInternDesc />,
 };
 
 export const ExperiencePage = () => {
@@ -27,8 +27,7 @@ export const ExperiencePage = () => {
             position={experience.position}
             from={new Date(experience.from)}
             to={experience.to ? new Date(experience.to) : null}
-            className={experience.className}
-            desc={descComponents[experience.descComponent as DescComponentKey]()}
+            desc={descComponents[experience.descComponent as DescComponentKey]}
             companyUrl={experience.companyUrl}
           />
         ))}

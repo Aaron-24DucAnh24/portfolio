@@ -6,6 +6,6 @@ export function formatDateRange(from: Date, to: Date | null): string {
 
 export function calculateDuration(from: Date, to: Date | null): string {
   const end = to || new Date();
-  const months = (end.getFullYear() - from.getFullYear()) * 12 + end.getMonth() - from.getMonth();
+  const months = (end.getFullYear() - from.getFullYear()) * 12 + end.getMonth() - from.getMonth() + 1;
   return `${months} ${months === 1 ? 'month' : 'months'}`;
 }

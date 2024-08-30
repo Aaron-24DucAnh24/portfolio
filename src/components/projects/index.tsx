@@ -5,7 +5,7 @@ import { PetopiaDesc } from './PetopiaDesc';
 import projectsData from '@/data/projectData.json';
 
 const descComponents = {
-  PetopiaDesc,
+  PetopiaDesc: <PetopiaDesc />,
 };
 
 type DescComponentKey = keyof typeof descComponents;
@@ -26,7 +26,7 @@ export const ProjectsPage = () => {
             techs={project.techs}
             source={project.source}
             image={STATIC_URLS[project.image as keyof typeof STATIC_URLS]}
-            desc={project.descComponent ? descComponents[project.descComponent as DescComponentKey]() : undefined}
+            desc={project.descComponent ? descComponents[project.descComponent as DescComponentKey] : undefined}
           />
         ))}
       </div>

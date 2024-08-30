@@ -7,6 +7,7 @@ import { ShrinkBorder } from '../general/ShrinkBorder';
 import { THEME } from '@/utils/enums';
 import { useAppSelector } from '@/utils/hooks';
 import { formatDateRange, calculateDuration } from '@/utils/dateUtils';
+import { usePalette } from 'color-thief-react';
 
 interface IExperienceCard {
   name: string;
@@ -15,13 +16,13 @@ interface IExperienceCard {
   from: Date;
   to: Date | null;
   desc: JSX.Element;
-  className: string;
   companyUrl: string;
 }
 
-export const ExperienceCard = ({ name, image, position, from, to, desc, className, companyUrl }: IExperienceCard) => {
+export const ExperienceCard = ({ name, image, position, from, to, desc, companyUrl }: IExperienceCard) => {
   const [isHover, setIsHover] = useState(false);
   const isDarkTheme = useAppSelector(x => x.theme.value === THEME.DARK);
+  const { data: dominantColor } = usePalette(image, 2, 'hex', { crossOrigin: 'anonymous' });
 
   const dateRange = formatDateRange(from, to);
   const duration = calculateDuration(from, to);
@@ -36,7 +37,10 @@ export const ExperienceCard = ({ name, image, position, from, to, desc, classNam
         `}
       >
         <div className='relative w-full h-36 flex justify-center items-center text-fourth font-medium'>
-          <div className={`${className} absolute top-0 left-0 right-0 bottom-0 brightness-90`}></div>
+          <div
+            className='absolute top-0 left-0 right-0 bottom-0 brightness-90'
+            style={{ backgroundColor: dominantColor && dominantColor[0] || 'transparent' }}
+          ></div>
           <p className='absolute'>{name}</p>
           <div className='absolute h-24 w-24 rounded-full overflow-hidden -bottom-12 shadow-xl'>
             <Link href={companyUrl} target="_blank" rel="noopener noreferrer">
