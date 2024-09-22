@@ -54,7 +54,7 @@ export const HomePage = () => {
           />
         </div>
         <div className='text:md sm:text-lg text-justify'>
-          {'I am a Bachelor of Computer Science and a passionate web developer specializing in .NET and ReactJS. With 6 months of experience, I\'m excited for an entry-level position where I can grow my skills and contribute to a company\'s success.'}
+          {'I am a Bachelor of Computer Science and a dedicated software engineer with expertise in .NET and ReactJS. As a fresher, I am committed to continuous learning and growth, with the long-term goal of transitioning into a Business Analyst role.'}
         </div>
         <div className='flex space-x-2'>
           <Button

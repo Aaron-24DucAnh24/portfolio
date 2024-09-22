@@ -3,12 +3,14 @@ import { ExperienceCard } from './ExperienceCard';
 import { NPInternDesc } from './NPInternDesc';
 import { NPFullstackDesc } from './NPFullstackDesc';
 import experiencesData from '@/data/experienceData.json';
+import { W2Desc } from './W2Desc';
 
 type DescComponentKey = keyof typeof descComponents;
 
 const descComponents = {
   NPFullstackDesc: <NPFullstackDesc />,
   NPInternDesc: <NPInternDesc />,
+  W2Desc: <W2Desc />
 };
 
 export const ExperiencePage = () => {

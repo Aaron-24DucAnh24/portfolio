@@ -151,7 +151,7 @@ const config: Config = {
       'slide-in': 'slide-in 0.5s linear',
       'slide-up': 'slide-up 0.35s ease-out',
       'slide-down': 'slide-down 0.35s ease-out',
-      floating: 'floating 1s ease-out infinite',
+      floating: 'floating 1.5s ease-out infinite',
       'cover-out': 'coverOut 1.2s ease-out',
       'cover-in': 'coverIn 1.5s ease-out',
       zoom: 'zoom 0.5s ease-in',
