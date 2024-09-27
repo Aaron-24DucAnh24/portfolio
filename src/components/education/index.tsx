@@ -11,8 +11,8 @@ export const EducationPage = () => {
   const { value } = useAppSelector(x => x.theme);
 
   return (
-    <div className={'max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col'}>
-      <h1 className='pb-2 sm:pb-12 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
+    <div className={'max-w-4xl px-4 py-4 sm:py-6 mx-auto flex flex-col'}>
+      <h1 className='pb-2 sm:pb-6 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
         Education and Certificates <GrCertificate color='#e60022' size={40} className='pl-2' />
       </h1>
 

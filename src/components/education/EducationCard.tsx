@@ -29,7 +29,7 @@ export const EducationCard = ({ image, orgName, degreeName, score, from, to }: I
     >
       <div className="px-4 py-4 w-full flex flex-col sm:flex-row items-center space-y-4 sm:space-x-4 sm:space-y-0">
         <Image
-          className='object-cover w-32 h-32 shadow-lg rounded-full border'
+          className='object-cover shadow-lg rounded-full border'
           src={image}
           alt={orgName}
           width={128}

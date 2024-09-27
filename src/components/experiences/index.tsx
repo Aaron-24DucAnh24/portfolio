@@ -15,12 +15,12 @@ const descComponents = {
 
 export const ExperiencePage = () => {
   return (
-    <div className={'max-w-5xl px-4 py-4 sm:py-12 mx-auto flex flex-col'}>
-      <h1 className='pb-4 sm:pb-12 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
+    <div className={'max-w-4xl px-4 py-4 sm:py-6 mx-auto flex flex-col'}>
+      <h1 className='pb-4 sm:pb-6 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
         Working Experiences
         <AiOutlineProject color='#e60022' size={40} className='pl-2' />
       </h1>
-      <div className='flex flex-wrap justify-between items-start -mx-4 sm:-mb-8 space-y-4 md:space-y-0'>
+      <div className='flex flex-col space-y-4'>
         {experiencesData.map((experience, index) => (
           <ExperienceCard
             key={index}
