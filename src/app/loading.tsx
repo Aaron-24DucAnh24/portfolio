@@ -14,8 +14,7 @@ export default function Page() {
         src={STATIC_URLS.LOGO}
         alt={STATIC_URLS.LOGO}
         width={300}
-        height={150}
-      />
+        height={150} />
     </main>
   );
 }

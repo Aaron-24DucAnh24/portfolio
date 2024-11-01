@@ -31,8 +31,7 @@ export const Nav = () => {
         </li>
         <li
           className={'items-center flex cursor-pointer'}
-          onClick={handleContact}
-        >
+          onClick={handleContact}>
           {TAB_NAME.CONTACT}
         </li>
       </ul>

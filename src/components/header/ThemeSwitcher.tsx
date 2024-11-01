@@ -15,11 +15,10 @@ import { setTheme } from '@/store/themeSlide';
 import { setMode } from '@/store/modeSlide';
 
 export const ThemeSwitcher = () => {
+  // STATES
   const theme = useAppSelector(x => x.theme);
   const mode = useAppSelector(x => x.mode);
   const dispatch = useAppDispatch();
-
-
   const [showCover, setShowCover] = useState(false);
   const [coverHidden, setCoverHidden] = useState(true);
   const [currentMode, setCurrentMode] = useState(mode.value);
@@ -103,36 +102,35 @@ export const ThemeSwitcher = () => {
   return (
     <div className={'h-full ml-2 md:ml-8 flex items-center relative'}>
       <SmoothUl
-        className={`flex flex-col justify-center absolute top-14 right-0 border shadow rounded-2xl p-2 cursor-pointer
-          ${theme.value === THEME.DARK ? 'bg-secondary border-third' : 'bg-white border-fourth'}
-        `}
+        className={
+          `flex flex-col justify-center absolute top-14 right-0 border shadow rounded-2xl p-2 cursor-pointer
+          ${theme.value === THEME.DARK ?
+            'bg-secondary border-third'
+            : 'bg-white border-fourth'}`
+        }
         button={
           <div className='h-fit hover:bg-fourth cursor-pointer p-2 rounded-2xl'>
             {theme.value === THEME.DARK && <DarkIcon color='#e60022' size={30} />}
             {theme.value === THEME.LIGHT && <LightIcon color='#e60022' size={30} />}
           </div>
-        }
-      >
+        }>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => { handleOnClickOption(MODE.SYSTEM); }}
-        >
+          onClick={() => { handleOnClickOption(MODE.SYSTEM); }}>
           <SystemIcon color='#e60022' size={20} className='mr-2' />
           {MODE.SYSTEM}
           {mode.value === MODE.SYSTEM && <FaCheck className='ml-auto' color='#e60022' />}
         </li>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => { handleOnClickOption(MODE.LIGHT); }}
-        >
+          onClick={() => { handleOnClickOption(MODE.LIGHT); }}>
           <LightIcon color='#e60022' size={20} className='mr-2' />
           {MODE.LIGHT}
           {mode.value === MODE.LIGHT && <FaCheck className='ml-auto' color='#e60022' />}
         </li>
         <li
           className='p-2 w-40 rounded-2xl hover:bg-fourth hover:text-secondary flex items-center'
-          onClick={() => { handleOnClickOption(MODE.DARK); }}
-        >
+          onClick={() => { handleOnClickOption(MODE.DARK); }}>
           <DarkIcon color='#e60022' size={20} className='mr-2' />
           {MODE.DARK}
           {mode.value === MODE.DARK && <FaCheck className='ml-auto' color='#e60022' />}
@@ -141,11 +139,10 @@ export const ThemeSwitcher = () => {
       {
         showCover && <div
           onAnimationEnd={handleOnAnimatedEnd}
-          className={`
-            fixed rounded-3xl rounded-r-none bg-primary brightness-95
-            ${coverHidden ? 'animate-cover-out' : 'animate-cover-in'}
-          `}
-        />
+          className={
+            `fixed rounded-3xl rounded-r-none bg-primary brightness-95
+            ${coverHidden ? 'animate-cover-out' : 'animate-cover-in'}`
+          } />
       }
     </div >
   );

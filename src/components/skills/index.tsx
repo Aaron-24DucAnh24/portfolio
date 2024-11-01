@@ -6,7 +6,7 @@ export const SkillsPage = () => {
   return (
     <div className={'max-w-4xl px-4 py-4 sm:py-6 mx-auto flex flex-col'}>
       <h1 className='pb-2 sm:pb-6 text-xl sm:text-2xl font-medium flex items-center sm:tracking-tighter'>
-        Technical Skills
+        {'Technical Skills'}
         <PiGearBold color='#e60022' size={40} className='pl-2' />
       </h1>
       <div className='flex flex-wrap justify-between items-start -mx-4 sm:-mb-8 space-y-4 md:space-y-0'>
@@ -26,8 +26,7 @@ export const SkillsPage = () => {
             'Javascript',
             'Typescript',
             'Python',
-          ]}
-        />
+          ]} />
         <SkillsCard
           name={'Frontend'}
           image={STATIC_URLS.FE}
@@ -44,8 +43,7 @@ export const SkillsPage = () => {
             'Tailwind',
             'MobX',
             'Redux'
-          ]}
-        />
+          ]} />
         <SkillsCard
           name={'Backend'}
           image={STATIC_URLS.BE}
@@ -62,8 +60,7 @@ export const SkillsPage = () => {
             'MySQL',
             'MongoDB',
             'Redis',
-          ]}
-        />
+          ]} />
         <SkillsCard
           name={'Other tools'}
           image={STATIC_URLS.TOOLS}
@@ -78,8 +75,7 @@ export const SkillsPage = () => {
             'Git',
             'Azure',
             'Cypress'
-          ]}
-        />
+          ]} />
       </div>
     </div>
   );

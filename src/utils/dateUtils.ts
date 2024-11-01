@@ -1,6 +1,11 @@
 export function formatDateRange(from: Date, to: Date | null): string {
-  const fromStr = from.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-  const toStr = to ? to.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : 'Present';
+  const fromStr = from.toLocaleDateString(
+    'en-US',
+    { month: 'long', year: 'numeric' }
+  );
+  const toStr = to ?
+    to.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) :
+    'Present';
   return `${fromStr} - ${toStr}`;
 }
 

@@ -28,8 +28,7 @@ export const HomePage = () => {
             src={STATIC_URLS.WAVING_HAND}
             alt={STATIC_URLS.WAVING_HAND}
             height={36}
-            width={36}
-          />
+            width={36} />
         </div>
         <div className='text-base md:text-xl text-third italic'>
           {'I\'m into '}
@@ -49,9 +48,7 @@ export const HomePage = () => {
               display: 'inline-block',
               color: '#e60022',
               fontWeight: 600,
-            }
-            }
-          />
+            }} />
         </div>
         <div className='text:md sm:text-lg text-justify'>
           {'I am a Bachelor of Computer Science and a dedicated software engineer with expertise in .NET and ReactJS. As a fresher, I am committed to continuous learning and growth, with the long-term goal of transitioning into a Business Analyst role.'}
@@ -60,15 +57,12 @@ export const HomePage = () => {
           <Button
             name={'My CV'}
             action={handleOpenCV}
-            primary
-          />
+            primary />
           <Button
             name={'Contact me'}
-            action={handleContact}
-          />
+            action={handleContact} />
         </div>
       </div>
-
       <div className='sm:bg-primary h-1/2 sm:h-full w-full sm:w-1/2 p-4 rounded-l-2xl'>
         <div className='h-full sm:h-full flex items-center justify-center relative'>
           <div className='h-72 w-72 rounded-full overflow-hidden absolute animate-flip-front flip-card'>
@@ -76,40 +70,35 @@ export const HomePage = () => {
               src={STATIC_URLS.DUCANH}
               alt={STATIC_URLS.DUCANH}
               className='object-cover'
-              fill
-            />
+              fill />
           </div>
           <div className='h-72 w-72 rounded-full overflow-hidden absolute animate-flip-back flip-card'>
             <Image
               src={STATIC_URLS[22]}
               alt={STATIC_URLS[22]}
               className='object-cover'
-              fill
-            />
+              fill />
           </div>
           <div className='hidden sm:block h-24 w-24 absolute top-10 left-10 animate-bound-y-reverse'>
             <Image
               src={STATIC_URLS.CLOUD}
               alt={STATIC_URLS.CLOUD}
               className='object-cover'
-              fill
-            />
+              fill />
           </div>
           <div className='hidden sm:block h-12 w-12 absolute bottom-10 right-20 animate-bound-y'>
             <Image
               src={STATIC_URLS.CLOUD}
               alt={STATIC_URLS.CLOUD}
               className='object-cover'
-              fill
-            />
+              fill />
           </div>
           <div className='hidden sm:block h-16 w-16 absolute top-32 right-32 animate-bound-y'>
             <Image
               src={STATIC_URLS.CLOUD}
               alt={STATIC_URLS.CLOUD}
               className='object-cover'
-              fill
-            />
+              fill />
           </div>
         </div>
       </div>

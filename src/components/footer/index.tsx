@@ -12,9 +12,10 @@ export const Footer = StateProvider(() => {
   const isDarkTheme = useAppSelector(x => x.theme.value === THEME.DARK);
 
   return (
-    <footer className={`shadow-2xl p-4 border-t
-      ${isDarkTheme ? 'bg-secondary text-fourth border-third' : 'border-fourth'}
-    `}>
+    <footer className={
+      `shadow-2xl p-4 border-t
+      ${isDarkTheme ? 'bg-secondary text-fourth border-third' : 'border-fourth'}`
+    }>
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="md:flex md:items-center md:justify-between ">
           <FooterLinks />
@@ -28,9 +29,9 @@ export const Footer = StateProvider(() => {
         </div>
 
         <div className="flex items-center justify-center text-sm  mt-4">
-          Make with
+          {'Make with'}
           <FaHeart color='#e60022' className='mx-2 animate-floating' />
-          by Duc Anh Bui.
+          {'by Duc Anh Bui.'}
         </div>
       </div>
     </footer>

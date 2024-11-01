@@ -17,35 +17,48 @@ interface ISmoothUl {
 }
 
 export const SmoothUl = (props: ISmoothUl) => {
-  const { children, button, className, onShow, onClose } = props;
+  const {
+    children,
+    button,
+    className,
+    onShow,
+    onClose
+  } = props;
+
   const buttonRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
   // STATES
-  const [outAnimated, setOutAnimated] = useState<boolean>(false);
+  const [animateOut, setAnimateOut] = useState<boolean>(false);
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
   // HANDLERS
   const handleShowOptions = () => {
-    !showOptions && setShowOptions(true);
-    showOptions && setOutAnimated(true);
+    if (showOptions) {
+      setAnimateOut(true);
+    } else {
+      setShowOptions(true);
+    }
   };
 
   const handleAnimationEnd = () => {
-    outAnimated && setShowOptions(false);
+    animateOut && setShowOptions(false);
   };
 
   // EFFECTS
   // Hiding options
   useClickOutside(() => {
-    setOutAnimated(true);
+    setAnimateOut(true);
   }, [buttonRef, listRef]);
 
   // Handling animation
   useEffect(() => {
-    !showOptions && setOutAnimated(false);
-    showOptions && onShow && onShow();
-    !showOptions && onClose && onClose();
+    if (showOptions) {
+      onShow && onShow();
+    } else {
+      setAnimateOut(false);
+      onClose && onClose();
+    }
   }, [showOptions]);
 
   return (
@@ -59,9 +72,8 @@ export const SmoothUl = (props: ISmoothUl) => {
           ref={listRef}
           onAnimationEnd={handleAnimationEnd}
           className={`
-            ${outAnimated && 'animate-slide-up opacity-0'}
-            ${!!className && className} animate-slide-down`}
-        >
+            ${animateOut && 'animate-slide-up opacity-0'}
+            ${!!className && className} animate-slide-down`}>
           {children}
         </ul>
       }

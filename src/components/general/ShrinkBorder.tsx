@@ -15,7 +15,6 @@ export const ShrinkBorder = ({ isHover }: { isHover: boolean }) => {
 
   return (
     <hr className={`border-2 duration-1000 bottom-0 absolute
-      ${isHover ? 'border-primary w-full' : className}`}
-    />
+      ${isHover ? 'border-primary w-full' : className}`} />
   );
 };

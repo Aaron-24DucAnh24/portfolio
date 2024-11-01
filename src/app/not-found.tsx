@@ -14,8 +14,7 @@ export default function Page() {
         src={STATIC_URLS.ERROR_404}
         alt={'404'}
         width={300}
-        height={150}
-      />
+        height={150} />
       <div className='mt-10 text-lg'>
         {'The page you\'re looking for doesn\'t exist.'}
       </div>

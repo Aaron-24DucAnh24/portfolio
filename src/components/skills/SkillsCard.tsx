@@ -13,7 +13,14 @@ interface ISkillsCard {
   techNames: string[];
 }
 
-export const SkillsCard = ({ name, image, items, techNames }: ISkillsCard) => {
+export const SkillsCard = (props: ISkillsCard) => {
+  const {
+    name,
+    image,
+    items,
+    techNames,
+  } = props;
+
   const [isHover, setIsHover] = useState(false);
   const isDarkTheme = useAppSelector(x => x.theme.value === THEME.DARK);
 
@@ -22,32 +29,33 @@ export const SkillsCard = ({ name, image, items, techNames }: ISkillsCard) => {
       <div
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        className={`rounded-lg overflow-hidden shadow-md hover:shadow-2xl border relative
-          ${isDarkTheme ? 'bg-fifth border-third' : ''}
-        `}
-      >
+        className={
+          `rounded-lg overflow-hidden shadow-md hover:shadow-2xl border relative
+          ${isDarkTheme ? 'bg-fifth border-third' : ''}`
+        }>
         <div className={'flex flex-col p-2 items-center space-y-2'}>
           <Image
             src={image}
             alt={name}
             width={96}
             height={96}
-            className='object-contain'
-          />
+            className='object-contain' />
           <div className='text-xl font-semibold'>{name}</div>
           <div className='flex flex-wrap justify-center items-start -mx-2 space-x-3'>
-            {items.map((item, i) => (
-              <div key={i} className='flex flex-col justify-center items-center text-sm font-semibold tracking-tighter'>
-                <Image
-                  src={item}
-                  alt={item}
-                  width={56}
-                  height={56}
-                  className='rounded-full mb-2 hover:animate-floating'
-                />
-                {techNames[i]}
-              </div>
-            ))}
+            {
+              items.map((item, i) => (
+                <div
+                  key={i}
+                  className='flex flex-col justify-center items-center text-sm font-semibold tracking-tighter'>
+                  <Image
+                    src={item}
+                    alt={item}
+                    width={56}
+                    height={56}
+                    className='rounded-full mb-2 hover:animate-floating' />
+                  {techNames[i]}
+                </div>
+              ))}
           </div>
         </div>
         <ShrinkBorder isHover={isHover} />

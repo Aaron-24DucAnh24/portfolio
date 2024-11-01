@@ -18,12 +18,14 @@ const socialIcons = [
 
 export const SocialLinks = () => (
   <ul className="flex flex-wrap items-center justify-center text-sm font-medium">
-    {socialIcons.map(({ href, Icon }) => (
-      <li key={href}>
-        <Link href={href} className="hover:text-primary me-10">
-          <Icon size={24} className='hover:animate-floating' />
-        </Link>
-      </li>
-    ))}
+    {
+      socialIcons.map(({ href, Icon }) => (
+        <li key={href}>
+          <Link href={href} className="hover:text-primary me-10">
+            <Icon size={24} className='hover:animate-floating' />
+          </Link>
+        </li>
+      ))
+    }
   </ul>
 );
