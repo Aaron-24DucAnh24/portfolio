@@ -10,7 +10,7 @@ export const NPFullstackDesc = () => {
     <ul className={'leading-6 space-y-2 text-sm text-third '}>
       <li className="dotted-li">
         <p>
-          {'Worked on the '}
+          {'Worked on '}
           <i
             className={`cursor-pointer text-black underline ${theme.value === THEME.DARK ? 'text-fourth' : 'text-fifth'}`}
             onClick={() => window.open('https://institute.debeers.com/en-gb/education')}>
